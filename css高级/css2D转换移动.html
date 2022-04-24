@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D转换</title>
+    <style>
+        /* 移动盒子的位置; 定位 盒子的外边距 2D转换移动 */
+        /* 移动：类似于定位； 
+语法：transform：translate（x，y）或者分开写；合在一起，其中一个可为零；
+transform：translateX（n）;
+transform: translateY(n);
+1.定义2D转换中的移动，沿着X和Y轴移动元素
+2.translate最大的优点:不会影响到其他元素的位置
+3.translate中的白分比单位是相对于自身元素的translate:(50%,50%);
+4.对行内标签没有效果
+*/
+        /* div {
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+            transform: translate(100px, 200px);
+         } */
+        /*  div:first-child {
+            width: 200px;
+            height: 200px;
+            background-color: blueviolet;
+        }
+        
+        div:nth-child(2) {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            transform: translate(-20px, -30px);
+         } */
+        
+        div {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+            /* 1.我们translate里的参数可以使用%；
+            2.如果里面的参数是%， 移动的距离是 盒子自身的宽度或者高度来对比的 */
+            /* transform: translateX(50%); */
+            /* 这里的50%就是50px 因为盒子的宽度就是100px*/
+        }
+        /* 盒子垂直,水平居中 */
+        
+        p {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200px;
+            height: 200px;
+            background-color: purple;
+            /*margin-top: 100px;
+             margin-left: 100px; */
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 转换（transform）可以实现的位移旋转，缩放等效果，变形。坐标系；
+    移动：translate；
+旋转：rotate；
+缩放：scale； -->
+    <!-- <div></div> 
+    <div></div> -->
+    <div>
+        <p></p>
+    </div>
+    <!-- <div></div> -->
+</body>
+
+</html>

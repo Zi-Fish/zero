@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+        }
+        
+        .xd {
+            z-index: 1;
+            background-color: aqua;
+        }
+        
+        .xe {
+            z-index: 2;
+            background-color: azure;
+            top: 50px;
+            left: 50px;
+        }
+        
+        .gt {
+            z-index: 3;
+            background-color: blueviolet;
+            top: 100px;
+            left: 100px;
+        }
+        /* 定位叠放次序：
+        在使用定位布局时，可能会出现合资重叠的情况，此时使用z-index来控制盒子的前后次序。
+        选择器：z-index：1；
+        数值可以是正整数，负数或0，数值越大，盒子越靠上。
+        2.如果属性值相同，则按照书写顺序，后来居上
+        3.数值后不加单位
+        4.只有定位的盒子才有z-index属性。 */
+    </style>
+</head>
+
+<body>
+    <div class="box xd">熊大</div>
+    <div class="box xe">熊二</div>
+    <div class="box gt">光头强</div>
+</body>
+
+</html>

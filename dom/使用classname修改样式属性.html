@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+        }
+        
+        .change {
+            background-color: rebeccapurple;
+            color: #fff;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="first">文本</div>
+    <script>
+        //1.使用element.style获得修改元素样式 如果样式比较少 或者功能简单的情况下使用
+        //2.修改元素的类名classname 复杂情况 会直接更改元素类名 覆盖原来的类名
+        var tet = document.querySelector('div')
+        tet.onclick = function() {
+
+            }
+            //如果保留原先的类名 this.className = 'first change' 原先类名+空格+新类名
+    </script>
+</body>
+
+</html>

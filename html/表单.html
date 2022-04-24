@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- form表单域,----服务器编程:action提交的位置,method提交的方式,name表单名称 -->
+    <form action="demo.php" method="post" name="表单">
+        <!-- 表单控件input输入,input单标签,包含type属性.
+    还有其他属性:name(名称),  value(默认值),,checked首次加载应被选中,maxlength规定输入字符的最大长度.-->
+        性别:男<input type="radio" name="sex" value="男" checked="checked"> 女<input type="ridio" name="sex" value="女"><br>
+        <input type="text" maxlength="10 ">
+        <!-- radio单选按钮,实现多选一,checkbox复选框实现多选 -->
+        <input type="submit" name="tijiao" value="提交">
+
+        <input type="reset" value="重置">
+        <!-- button后期配合js使用 -->
+        <input type="button" value="获取短信验证码">
+        <!--文件域file,上传文件  -->
+        <input type="file">
+        <!--当点击lable标签内的文本时，浏览器就会zidong
+        将光标转到对应的表单元素上  -->
+        <label for="sex">男</label>
+        <input type="radio" name="sex" id="sex">
+        <!--lable标签的for属性与相关元素的id相同  -->
+        <!--select下拉列表，包含option  -->
+        籍贯：<select name="" id="">
+ <option value="">第一宇宙</option>
+<option value="">第二宇宙</option>
+<option value="">第三宇宙</option>
+<option value="" selected="selected">第四宇宙</option>
+        </select>
+
+        <!--text文本框（单行），textarea文本域（多行）
+          -->
+        文本域：<textarea name="001" id="001" cols="30" rows="5">
+宇哥nb
+          </textarea>
+        <!-- cols每一行的字符数，rows显示的行数 -->
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D旋转</title>
+    <style>
+        body {
+            perspective: 500px;
+        }
+        
+        img {
+            display: block;
+            margin: 100px auto;
+            width: 200px;
+            transition: all 2s;
+        }
+        
+        img:hover {
+            /* transform: rotateZ(45deg); */
+            /* 左手准则：弯曲四指，大拇指指向该轴正方向，正值旋转方向即为四指弯曲方向 */
+            /* transform: rotate3d(0, 1, 0, 45deg); */
+            /* y轴旋转45度，其他轴类似 */
+            transform: rotate3d(1, 1, 0, 45deg);
+            /* 沿着矢量方向旋转 */
+        }
+    </style>
+</head>
+
+<body>
+    <img src="images/pig.jpg" alt="">
+</body>
+
+</html>

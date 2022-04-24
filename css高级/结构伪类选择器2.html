@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>结构伪类选择器</title>
+    <style>
+        /* nth-child会把所有盒子都排列序号，执行时首先看序号，再看条件，不满足，不更改· */
+        /* section div:nth-child(1) {
+            border-color: brown;
+        }*/
+        /* nth-of-type:排列指定元素序号，再查找 */
+        
+        section div:nth-of-type(1) {
+            background-color: blueviolet;
+        }
+        /* first-of-type:指定类型的第一个
+        last-of-type：指定类型的最后一个 */
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>我是第1个孩子</li>
+        <li>我是第2个孩子</li>
+        <li>我是第3个孩子</li>
+        <li>我是第4个孩子</li>
+        <li>我是第5个孩子</li>
+        <li>我是第6个孩子</li>
+        <li>我是第7个孩子</li>
+        <li>我是第8个孩子</li>
+    </ul>
+    <section>
+        <p>光头强</p>
+        <div>熊大</div>
+        <div>熊二</div>
+    </section>
+</body>
+
+</html>

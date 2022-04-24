@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div data-a11="1" getTime="20" data-list-name="an">123</div>
+    <script>
+        var div = document.querySelector('div')
+            //1.H5规定自定义属性data-开头作为属性名并赋值
+        console.log(div.getAttribute('data-a11'));
+        div.setAttribute('data-a11', 20);
+        //H5新增的获取自定义属性的方法 只能获取data-开头的
+        //2.dataset是一个集合里面存放了所有以data开头的自定义属性
+        console.log(div.dataset)
+        console.log(div.dataset.a11)
+        console.log(div.dataset['a11'])
+        console.log(div.dataset.listName) //多个-链接的 去掉斜杠 首字母大写 驼峰命名法
+    </script>
+
+</body>
+
+</html>

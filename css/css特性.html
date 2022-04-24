@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            /* css三大特性：层叠性，继承性，优先级 */
+            color: brown;
+        }
+        /* 层叠性：相同选择器设置相同的样式
+        1.样式冲突，就近原则，哪个样式近，就执行那个 
+        2.不冲突，不重叠*/
+        
+        div {
+            color: aqua;
+            font-size: 20px!important;
+        }
+        /* 继承性：
+        子标签会继承父标签的某些样式，如文本颜色和色号。（text-，font-，line-开头的，以及color） */
+        
+        body {
+            font: 12px/1.5 'Microsoft YaHei';
+            /* 1.行高可以跟单位也可以不跟
+            2.如果子元素没有设置行高，则继承父元素的行高为1.5
+            3.此时子元素的行高为文字大小*1.5 */
+
+            /* 优先级:同一个元素指定多个选择器，就会有优先级的产生。
+            1.选择器相同，则执行层叠性。
+            2.选择器不同，则根据选择器权重执行。（！important>行内样式style="">id>类选择器、伪类选择器>元素选择器>继承或者*） */
+            /* 复合选择器的权重需要计算，叠加不进位。 */
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="1d1">
+        <p>123</p>
+        <p>456</p>
+    </div>
+    <div class="2d1"></div>
+    <div class="3d1"></div>
+</body>
+
+</html>

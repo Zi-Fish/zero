@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var num; //这里的num 不确定属于哪种类型
+        var num = 10; //num属于数字型
+        //js的变量数据类型是只有在程序运行过程中，根据等号右边的值来确定
+        //js是动态语言，变量的数据类型是可以变化的
+        var x = 10;
+        x = 'pink';
+        //将会输出pink 字符串
+        //简单数据类型：值类型 在存储变量中存储的是值本身 string number boolean undefine null 分配到栈里
+        // number 包含整形和浮点型 默认为0
+        //boolean 布尔型 默认为false
+        // string 字符串
+        // undefined 声明未赋值
+        // null 声明变量为空值 返回的是一个空的对象 object
+
+        var num1 = 010;
+        console.log(num1);
+        //数字前加0 表示八进制
+        //数字前加0x 表示十六进制
+        console.log(Number.MAX_VALUE);
+        //数字型的最大值
+        console.log(Number.MIN_VALUE);
+        //特殊值 
+        console.log(Number.MAX_VALUE * 2); //infinity 无穷大
+        console.log(-Number.MAX_VALUE * 2); //-infinity 无穷小
+        console.log('pink' - 100); //NAN 非数字
+        //isNaN()用于判断非数字 是则返回false 否则返ture
+        console.log(isNaN('pink'));
+        console.log(isNaN('12'));
+        //字符串是引号中的任意文本，其语法为双引号和单引号
+        //没使用引号，会被认为是js代码，又不属于语法，会报错
+        //字符串引号嵌套 外双内单 外单内双
+        //字符串转义字符 包含在引号里面
+        // \n换行 \\斜杠\ \'单引号 \"双引号 \t tab缩进 \b 空格
+        //========================================
+        //引用类型：复杂数据类型 存储变量存储的是地址
+        //通过new关键字创建的对象 如object array date
+        //存放在堆里 地址十六进制存放在栈里指向堆
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

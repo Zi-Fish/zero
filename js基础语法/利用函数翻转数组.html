@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //利用函数翻转数组 reverse
+        function reverse(arr) {
+            if (arr instanceof Array) {
+                var newArr = [];
+                for (var i = arr.length; i >= 0; i--) {
+                    newArr[newArr.length] = arr[i];
+                }
+                return newArr;
+            } else {
+                return '必须是数组格式'
+            }
+        }
+        var arr1 = reverse([1, 5, 6, 8, 47]);
+        console.log(arr1);
+        var arr2 = reverse(['red', 'ponl', 'dbhg']);
+        console.log(arr2);
+        console.log(reverse([9, 5, 4, 8, 5]))
+        console.log(reverse(1, 2, 3)) //[]
+            //=========================================
+            //检测是否为数组
+            //(1).instanceof 运算符 可以用来检测是否为数组
+        var arr = [];
+        var bbj = {};
+        console.log(arr instanceof Array); //true
+        console.log(bbj instanceof Array); //false
+        //2.Array.isArray(参数)； h5新增的方法
+        console.log(Array.isArray(arr)); //true
+        console.log(Array.isArray(bbj)); //false
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

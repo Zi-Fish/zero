@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="img/神明.jpg" alt="" class="ad">
+    <button>点击停止定时器</button>
+    <script>
+        //也可称为回调函数callback
+        //window.setTimeout(调用函数,[延迟的秒数]);
+        //该方法用于设置一个定时器，该定时器在定时器到期后执行调用函数
+        //1.window在调用时可省略
+        //2.延时时间的单位是毫秒 但是可以省略，省略默认是0，立即执行
+        //3.这个调用函数可以直接写函数 还可以写函数名 '函数名()' 也可以实现
+        //4.页面中可能有很多定时器，经常给定时器加标识符(名字)
+        // setTimeout(function() {
+        //     alert('2s到了')
+        // }, 2000)
+        function ca() {
+            console.log('3s到了')
+        }
+        // setTimeout(ca, 3000);
+        //setTimeout('ca()',3000) 不提倡
+        var tim1 = setTimeout(ca, 3000)
+        var tim2 = setTimeout(ca, 6000)
+        var ad = document.querySelector('.ad');
+        setTimeout(function() {
+                ad.style.display = 'none';
+            }, 5000)
+            //==================================
+        var btn = document.querySelector('button')
+        var tim = setTimeout(function() {
+                console.log('爆炸了')
+            }, 5000)
+            //停止setTimeout定时器
+            //window.clearTimeout(timeoutID)
+            //该方法取消了先前调用setTimeout()建立的定时器
+        btn.addEventListener('click', function() {
+            clearTimeout(tim); //参数就是定时器的标识符
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //短路运算的原理：当有多个表达式（值）时，左边的表达式值可以确定结果时，就不再继续运算右边的表达式的值
+        //逻辑与：如果第一个表达式的值为真，则返回表达式2
+        // 如果第一个表达式的值为假，则返回表达式1
+        console.log(123 && 456); //456
+        console.log(0 && 456); //0
+        console.log(0 && 1 + 2 && 456 * 4563) //0
+            //逻辑或如果表达式1结果为真，则返回表达式1
+            //如果表达式1结果为假，则返回表达式2
+        console.log(123 || 456) //123 其后的不执行
+        console.log(0 || 456 || 4123 + 123) //456
+        var n = 0;
+        console.log(123 || n++);
+        console.log(n)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

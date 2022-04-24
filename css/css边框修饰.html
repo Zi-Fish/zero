@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* border-radius属性用于修饰元素的外边框圆角,数值 (百分数)越大，角越圆润。 */
+        /* 正方形变为圆：数值设为高度或者宽度的一半，或者50%。矩形设置为高度的一半。 */
+        /* 简写属性：左上，右上，右下，左下
+        两个值：对角线；
+        分开写：border-top-left-radius */
+        
+        div {
+            width: 500px;
+            height: 500px;
+            border: 3px;
+            background-color: aqua;
+            border-radius: 50px;
+            box-shadow: 10px 10px 60px blue;
+            text-shadow: 5px 5px 5px blue;
+        }
+        /* 文字阴影：text-shadow
+        h-shadow v-shadow blur color四个值 */
+        
+        h2 {
+            text-align: center;
+        }
+        /* box-shadow:h-shadow v-shadow blur spread color inset（阴影不占用盒子空间,不影响其他盒子排列）
+        h-shadow:必需，水平阴影可负值,负左正右
+        v-shadow:必需，垂直阴影可负值，负下正上
+        blur模糊距离(虚实程度，越大越虚) spread模糊尺寸(大小) color 阴影颜色 inset将（outset）改为内部阴影。 */
+    </style>
+</head>
+
+<body>
+    <div>
+        <h2>123</h2>
+    </div>
+</body>
+
+</html>

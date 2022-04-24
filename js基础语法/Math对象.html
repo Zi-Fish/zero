@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //js对象分三种 自定义对象 内置对象 浏览器对象
+        //内置对象就是js语言自带的一些对象，这些对象供开发者使用，并提供了一些常用的，最基本的而不必要的功能(属性和算法)
+        //=========================================
+        //Math数学对象 不是一个构造函数 不需要用new来调用 而是直接使用里面的属性和方法
+        console.log(Math.PI);
+        console.log(Math.max(44, 100.20));
+        console.log(Math.max(1, 55, 'zrl')); //NaN
+        console.log(Math.max()); //-infinity
+        //==========================================
+        //利用对象封装自己的数学对象 里面有 pi 最大值 最小值
+        var myMath = {
+            max: function() {
+                var max = arguments[0];
+                for (var i = 1; i < arguments.length; i++) {
+                    if (arguments[i] > max) {
+                        max = arguments[i];
+                    }
+                }
+                return min;
+            },
+            min: function() {
+                var min = arguments[0]
+                for (var i = 1; i < arguments.length; i++) {
+                    if (arguments[i] < min) {
+                        min = arguments[i];
+                    }
+                }
+                return min;
+            }
+        }
+        console.log(Math.PI);
+        //绝对值
+        //Math.abs
+        console.log(Math.abs('-1')); //隐式转换 会转换为数字型
+        console.log(Math.abs('p')); //NaN
+        //三个取整方法
+        //Math.floor 向下取整
+        //Math.ceil 向上取整
+        //Math.round 四舍五入 五比较特殊 往大里取
+        console.log(Math.round(-1.5)); //-1
+        //随机数random 返回一个随机的小数 0<=x<1 这个方法里不加参数
+        console.log(Math.random());
+        //得到两个数之间的随机整数 并且包含这两个整数
+        // Math.floor(Math.random() * (max - min + 1)) + min;
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        console.log(getRandom(18, 50))
+            //随机点名
+        var arr = ['zrl', 'xl', 'lx', 'lhx']
+        console.log(arr[getRandom(0, arr.length - 1)])
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

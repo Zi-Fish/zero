@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 后代选择器： 父元素写在子元素的前面,都会改变 -->
+    <style>
+        ol li {
+            color: blue;
+        }
+        /* 子选择器：只改变某元素的最近一级元素。用> */
+        
+        .nav>a {
+            color: red;
+        }
+        /* 并集选择器：集体声明，几个标签相加，用，号隔开 */
+        /* div,  p {
+            color: pink;
+        }*/
+        
+        div,
+        p,
+        .pig li {
+            color: blue;
+        }
+        /* 伪类选择器：向某些选择器添加特殊的效果。用：表示 
+        a:link: 选择所有未被访问的链接
+        a:visited 选择所有已被访问的链接
+        a:hover 选择鼠标位于其上的链接
+        a:active 选择活动链接（鼠标按下未弹起的链接） */
+        /* 几个顺序不能颠倒  */
+        
+        a:link {
+            color: aqua;
+            text-decoration: none;
+        }
+        
+        a:visited {
+            color: black;
+        }
+        
+        a:hover {
+            color: blue;
+        }
+        
+        a:active {
+            color: green;
+        }
+        /* focus伪类选择器：
+        把获得光标的input表单元素选取出来 */
+        
+        input:focus {
+            background: pink;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <ol>
+        无用
+        <li>123</li>
+        <li>123</li>
+        <li>123</li>
+    </ol>
+    <ul>
+        <li>123</li>
+        <li>123</li>
+        <li>123</li>
+    </ul>
+    <!-- 后代选择器 -->
+    <div class="nav">
+        <a href="#">子</a>
+        <p>
+            <a href="#">孙</a>
+        </p>
+    </div>
+    <!-- 子选择器 -->
+    <div>熊大</div>
+    <p>熊二</p>
+    <span>光头强</span>
+    <ul class="pig">
+        <li>小猪佩奇</li>
+        <li>猪爸爸</li>
+        <li>猪妈妈</li>
+    </ul>
+    <!-- 并集选择器 -->
+    <a href="#">小猪佩奇 </a>
+    <!-- 链接伪类选择器 -->
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <!-- focus伪类选择器 -->
+</body>
+
+</html>

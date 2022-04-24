@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>冒泡排序法</title>
+    <script>
+        //冒泡排序：把一系列数据按照大小排列
+        var arr = [6, 2, 8, 4, 5, 2]
+        for (i = 0; i < arr.length - 1; i++) //外层循环管趟数
+        {
+            for (var j = 0; j <= arr.length - i - 1; j++) { //内循环管每一趟交换次数
+                //内部交换2个变量的值，前一个元素和后一个元素相比较
+                if (arr[j] > arr[j + 1]) {
+                    var temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+        console.log(arr)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

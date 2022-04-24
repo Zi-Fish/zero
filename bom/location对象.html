@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>点击</button>
+    <div></div>
+    <script>
+        //window对象给我们提供一个location属性用于获取或设置窗体的url,并且可以用于解析url 返回的是一个对象
+        //url 统一资源定位符是互联网上标准资源的地址，互联网的每个文件都有一个唯一的url 它包含的信息指出文件的位置以及浏览器应该怎么去处理它
+        //protocol://host[:port]/path/[?query]#fragment
+        //protocol 通信协议 常用的http,ftp,matio等
+        //host 主机 域名 post 端口号 可选，省略时使用方案的默认端口为80 path 路径 有零或多个'/'符号隔开的字符串，一般用来表示主机上的一个目录或文件地址 query 参数 以键值对的形式通过&符号分隔开来 fragment 片段 #号后面内容 常用于链接 锚点
+        // location.href //获取或设置 整个url*
+        // location.host //返回主机(域名)
+        // location.port //返回端口号 如果未写返回 空字符串
+        // location.pathname //返回路径
+        // location.search //返回参数 *
+        // location.hash //返回片段
+        // var btn = document.querySelector('button');
+        // btn.addEventListener('click', function() {
+        //         // console.log(location.href);
+        //         location.href = 'http://www.baidu.com'; //点击之后会跳转
+        //         console.log(location.href);
+        //     })
+        //=======================================
+        //location对象方法
+        //location.assign() 跟href一样，可以跳转页面
+        //location.replace() 替换当前页面，不记录历史，不能后退页面
+        //location() 重新加载页面，相当于刷新按钮或者F5 如果参数为true 强制刷新 ctrl+F5
+        var btn = document.querySelector('buttton');
+        btn.addEventListener('click', function() {
+            //记录浏览历史，可以后退
+            // location.assign('http://www.baidu.com');
+            //不记录浏览历史，所以不实现后退功能
+            //location.replace('http://www.baidu.com');
+            location.reload();
+        })
+    </script>
+</body>
+
+</html>

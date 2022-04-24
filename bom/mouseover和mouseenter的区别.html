@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .fa {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 100px auto;
+        }
+        
+        .so {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="fa">
+        <div class="so"></div>
+    </div>
+    <script>
+        //mouse over 经过自身盒子要触发，经过子盒子还会触发
+        //mouseenter 只会经过自身盒子触发，不会冒泡
+        var fa = document.querySelector('.fa');
+        var so = document.querySelector('.so');
+        fa.addEventListener('mouseenter', function() {
+                console.log(11);
+            })
+            // so.addEventListener('mouseover', function() {
+            //     console.log(12);
+            // })
+        fa.addEventListener('mouseleave', function() {
+            //mouse leave同样没有冒泡
+            console.log(12);
+        })
+    </script>
+</body>
+
+</html>

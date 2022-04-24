@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* padding内边距:边框与内容之间的距离 */
+        
+        div {
+            width: 100px;
+            height: 100px;
+            padding: auto;
+            /*padding-left,right,top,bottom*/
+            /* padding:1个值:上下左右全是
+            padding:2个值:前上下,后左右.
+            padding:三个值:前上 中左右 后下
+            padding:四个值:上右下左 顺时针 */
+            /* 内边距也会使盒子实际体积变大*/
+        }
+        /* padding不会影响盒子大小的情况
+        不设置高度或宽度，就不会撑开相应的属性。 */
+        
+        h1 {
+            height: 100px;
+            background-color: aqua;
+            padding: 30px;
+        }
+        /* 图片不撑开盒子，可以将width设置为父元素一样的  */
+    </style>
+</head>
+
+<body>
+    <div>10000</div>
+    <h1>zrl</h1>
+</body>
+
+</html>

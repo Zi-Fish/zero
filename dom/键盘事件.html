@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //onkeyup 某个按键被松开时触发
+        // 
+        document.addEventListener('keyup', function() {
+                console.log('弹起了');
+            })
+            //onkeydown 某个按键被按下时触发 同时按下 优先执行
+        document.addEventListener('keydown', function() {
+                console.log('按下了down');
+            })
+            //onkeypress 某个按键被按下时触发 但是不识别功能键 比如 CTRL shift 箭头等
+        document.addEventListener('keypress', function() {
+                console.log('按下了press');
+            })
+            //三个事件的执行顺序 keydown - keypress-keyup
+    </script>
+</body>
+
+</html>

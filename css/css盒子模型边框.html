@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 盒子模型：border padding margin content */
+        /*  父盒子可以不定高度，更加灵活但也有其他问题 */
+        
+        div {
+            width: 100px;
+            height: 100px;
+            border-width: 3px;
+            /*边框宽度*/
+            border-style: solid;
+            /*边框样式：solid实线 dashed虚线 dotted点线*/
+            border-color: pink;
+            /*边框颜色*/
+            /* 边框简写：border：1px solid red;没有顺序 */
+            border-top-color: aqua;
+            /*只修改上边框的颜色 border-top：简写先写范围大的，再写小的 */
+            /* border-collapse: collapse;表示相邻的边框合并在一起 */
+            border-collapse: collapse;
+        }
+        /* 边框会影响盒子的实际大小,会增加 */
+    </style>
+</head>
+
+<body>
+    <div>1235 </div>
+
+</body>
+
+</html>

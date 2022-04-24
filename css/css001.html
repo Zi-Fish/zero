@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css</title>
+    <style>
+        /* 选择器+声明,选择器即是修改对象 */
+        /* 标签选择器：写上标签名称 */
+        
+        p {
+            color: aqua;
+            font-size: 12px;
+            /*键值对：属性+属性值 */
+        }
+        
+        div {
+            color: pink;
+        }
+        /* 选择器分为基础和复合：
+        基础选择器是由单个选择器组成的；
+        分为标签，类选择器，id,通配符选择器。 */
+        /* 类选择器：结构需要调用class类，前面加个. ,自定义类名，不能使用标签名*/
+        
+        .blue {
+            color: blue;
+            font-size: 20px;
+        }
+        /* 类选择器：多类名；class一个标签多个类名，类目间用空格隔开。 */
+        
+        .yellow {
+            color: yellow;
+        }
+        
+        .font30 {
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>男</p>
+    <p>男</p>
+    <p>男</p>
+    <div>女</div>
+    <div>女</div>
+    <div>女</div>
+    <p>有点意思</p>
+    <ul>
+        <li class="
+        blue">并与</li>
+        <li class="blue">hanxi</li>
+        <li>来生缘</li>
+    </ul>
+    <div class="blue">陶继鑫</div>
+    <div class="yellow font30">许嵩</div>
+</body>
+
+</html>

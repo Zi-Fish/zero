@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>123</div>
+    <ul>
+        <li>abc</li>
+        <li>abc</li>
+        <li>abc</li>
+    </ul>
+    <script>
+        //常见事件对象的属性和方法
+        //1.e.target返回的是触发事件的对象(元素) this 返回的是绑定事件的对象
+        var div = document.querySelector('div');
+        div.addEventListener('click', function(e) {
+            console.log(e.target);
+            console.log(this)
+        })
+        var ul = document.querySelector('ul');
+        ul.addEventListener('click', function(e) {
+                //给ul绑定的事件 那么this就指向ul currentTarget 类似都是绑定谁，指向谁
+                console.log(this);
+                console.log(e.currentTarget);
+                //e.target 指向我们点击的那个对象 谁触发了这个对象 点击的li 便指向li
+                console.log(e.target);
+            })
+            //e.target() 返回触发事件的对象 标准
+            //e.srcElement() 返回触发事件的对象 非标准 ie6-8
+            //e.type() 返回事件的类型 比如click mouseover 不带on
+            //e.cancelBubble() 该属性阻止冒泡 ie6-8
+            //e.returnValue() 该属性阻止默认事件(默认行为) 非标准
+            //e.preventDefault() 该方法阻止默认事件(默认行为) 标准
+            //e.stopPropagation() 阻止冒泡 标准
+            //=====================================
+            //兼容性处理
+            // div.onclick=function(e){
+            //     e=e||window.event;
+            //     var target=e.target||e.srcElement;
+            //     console.log(target);
+            // }
+    </script>
+</body>
+
+</html>

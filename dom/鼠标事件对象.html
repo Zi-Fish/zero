@@ -1,0 +1,30 @@
+~
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //鼠标事件对象 MouseEvent
+        //1.client 鼠标在可视区的x,y坐标
+        document.addEventListener('click', function(e) {
+            console.log(e.clientX);
+            console.log(e.clientY); //获取鼠标的位置 
+
+            //2.page 鼠标在文档页面的x,y坐标 ie9支持
+            console.log(e.pageX);
+            console.log(e.pageY);
+            //3.screen 鼠标在电脑屏幕的x,y坐标
+            console.log(e.screenX);
+            console.log(e.screenY);
+        })
+    </script>
+</body>
+
+</html>

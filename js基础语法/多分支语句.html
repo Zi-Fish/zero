@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1.多选一 
+        /*if (条件1) 
+        { //语句一
+        } else if (条件2) 
+        {
+            //语句二
+        }
+        //——————————————--
+        else {
+            //都不满足，执行最终语句
+        }*/
+        //从上到下，谁满足执行谁，挨个判断
+        var grade = prompt('输入分数');
+        //var grade = Number(grade);
+        console.log(grade);
+        if (grade >= 90) {
+            alert('你的成绩等级为：优')
+        } else if (grade >= 80) {
+            alert('你的成绩等级为：良');
+        } else if (grade >= 70) {
+            alert('你的成绩等级为：中');
+        } else if (grade >= 60) {
+            alert('你的成绩等级为：一般')
+        } else {
+            alert('不及格');
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

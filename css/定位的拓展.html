@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定位的拓展</title>
+    <style>
+        /* 加了绝对定位的盒子不能通过margin：0 auto水平居中，但是可以通过以下计算方法实现水平和垂直居中
+         */
+        
+        .box {
+            position: absolute;
+            /* 1.left走50%,父容器 */
+            left: 50%;
+            /* 2.margin 负值 向左走 自己盒子宽度的一半 */
+            margin-left: -100px;
+            /*水平居中*/
+            top: 50%;
+            margin-top: -100px;
+            /*垂直居中*/
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+            /* margin: auto; */
+        }
+        
+        .b {
+            background-color: beige;
+        }
+        
+        span {
+            /* position: absolute; */
+            float: left;
+            width: 200px;
+            height: 150px;
+            background-color: aquamarine;
+        }
+        /* 2.行内元素添加绝对或者固定定位，可以直接设置高度和宽度。
+        块级元素添加绝对或者固定定位，如果不给宽度或者高度，默认大小是内容的大小。 */
+        /* 3.脱标的盒子不会触发外边距塌陷
+        浮动元素、绝对、固定定位元素都不会触发外边距合并的问题 */
+        /*4.绝对定位（固定定位）会 完全 压住盒子。
+         浮动元素不同，只会压住他下面标准流的盒子，但是不会压住标准流盒子里的文字和图片 */
+    </style>
+</head>
+<div class="box"></div>
+<span class="spa">123</span>
+<div class="b">zxghjkl</div>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arr = [];
+        var mn = prompt('新增整数个数')
+        for (i = 0; i < mn; i++) {
+            arr[i] = i + 1;
+        }
+        console.log(arr)
+            //=======================================
+            // var a1 = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7, 96, 36, ]
+            // var a2 = []
+            // var j = 0;
+            // for (var i = 0; i < a1.length; i++) {
+            //     if (a1[i] >= 10) {
+            //         //新数组应该从0开始，依次存入
+            //         a2[j] = a1[i];
+            //         j++
+            //     }
+            // }
+
+        //=========================================
+        var a1 = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7, 96, 36, ]
+        var a2 = []
+        for (var i = 0; i < a1.length; i++) {
+            if (a1[i] >= 10) {
+                //新数组应该从0开始，依次存入
+                a2[a2.length] = a1[i];
+            }
+        }
+        console.log(a2)
+            //删除指定数组元素
+        var a3 = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7]
+        var a4 = []
+        for (i = 0; i < a3.length; i++) {
+            if (a3[i] != 0) {
+                a4[a4.length] = a3[i]
+            }
+        }
+        console.log(a4)
+            //=========================================
+            //元素翻转存放
+        var a5 = []
+        for (i = a3.length - 1; i >= 0; i--) {
+
+            a5[a5.length] = a3[i]
+        }
+        console.log(a5)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

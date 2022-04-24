@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div class="box">div</div>
+    <span>span</span>
+    <ul>
+        <li>li</li>
+        <li>li</li>
+        <li>li</li>
+        <li>li</li>
+        <li>li</li>
+    </ul>
+    <div class="box">
+        <span class="ewm">x</span>
+    </div>
+    <ol>
+        <li>li1</li>
+        <li>li2</li>
+        <li>li3</li>
+        <li>li4</li>
+        <li>li5</li>
+    </ol>
+    <script>
+        //节点至少拥有nodeType(节点类型)、nodeNameO(节点名称)和nodeValue(节点值)三个基本属性
+        //元素节点类型 为1
+        //属性节点类型 为2
+        //文本节点类型 为3(文本节点包含文字，空格，换行等)\
+        //var box = document.querySelector('.box');
+        // console.dir(box)
+        //利用dom树可以把节点划分为不同的层级关系，常见的是父子兄层级关系
+        //========================================
+        //node.parentNode 父级节点
+        var ewm = document.querySelector('.ewm');
+        console.log(ewm.parentNode);
+        //得到的是离元素最近的父节点 没有就返回null
+        //========================================
+        //子节点 parentNode.childNodes(标准) 返回包含指定节点的子节点的集合，该集合为即时更新的集合
+        //返回值包含了所有的子节点，包括元素节点，文本节点等
+        var ul = document.querySelector('ul')
+        var lis = document.querySelectorAll('li')
+        console.log(ul.childNodes)
+        console.log(ul.childNodes[0].nodeType)
+            //取元素节点，需要专门处理，一般不使用childnodes 遍历节点 nodetype=1即是元素节点
+            //parentNode.children(非标准)
+            //parentNodes.children是一个只读属性，返回所有的子元素节点，只返回子元素节点，其他节点不返回，虽然非标准，但是各个浏览器支持
+        console.log(ul.children);
+        //firstChild 第一个子节点  ie9才支持
+        var ol = document.querySelector('ol')
+        console.log(ol.firstChild);
+        // firstElementChild 第一个元素节点
+        console.log(ol.firstElementChild);
+        // lastChild 最后一个节点
+        console.log(ol.lastChild);
+        // lastElementChild 最后一个元素节点
+        console.log(ol.lastElementChild);
+        //===========================================
+        //实际开发中的写法 索引号 既没有兼容性问题，又返回第一个子元素
+        console.log(ol.children[0]);
+        console.log(ol.children[ol.children.length - 1]); //最后一个子元素
+    </script>
+
+</body>
+
+</html>

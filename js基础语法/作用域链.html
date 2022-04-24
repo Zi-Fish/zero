@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //只要是代码，就至少有一个作用域
+        //写在函数内部的就是局部作用域
+        // 如果函数中还有函数，那么在这个作用域中又可以诞生一个作用域
+        //=======================================
+        //作用域链
+        var num = 10; {
+            //外部函数
+            var num = 20;
+
+            function fun() { //外部函数
+                console.log(num) //20
+                    //采取链式方式查找，向上一层一层访问，l来决定取哪个值，就是作用域链
+                    //就近原则
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

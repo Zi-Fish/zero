@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 可以使用数组(Array).数组可以把组相关的数据起存放 .并提供方便的访问(获取)方式
+        // 数组是指组数据的集合，其中的每个数据被称作元素，在数组中可以存放任意类型的元索。数组是一种格一 组数据存储在单个变量名下的优雅方式。
+        // /昔通变量一次只能存储个值
+        // /数组一次可以存储多个值//
+        //===============================
+        //利用new创建数组
+        var arr = new Array(); //创建了一个空的数组
+        var ar = new Array(2); //这个2表示数组的长度为2 里面有两个空的数组元素
+        var ar1 = new Array(2, 3); //等价于[2,3] 这样写表示有两个数组元素 是2和3
+        //3.利用数组字面量创建数组
+        var arr1 = []; //创建一个空的数组
+        var arr2 = [1, 2, 'zrl', true];
+        //4.我们数组里面的数据用逗号分隔
+        // 5.数组里的数据被称为元素，可以存放任意类型的数据
+        //=========================================
+        //6.获取数组元素 
+        //数组可以通过索引来访问、设置、修改对应的数组元素 索引号从0开始 数组名[索引]
+        console.log(arr2[2]);
+        console.log(arr1[4]); //undefined 没有这个元素
+        //===========================
+        //把数组元素全部取出来 用循环 
+        var a9 = ['q', 'w', 'e', 'r', 't', 'y']
+            //遍历数组 就是把数组的元素从头到尾访问一次
+        for (var j = 0; j < 6; j++) {
+            console.log(a9[j]);
+        }
+        //索引号从0开始 i从0开始
+        console.log(a9.length);
+        //=================================
+        //数组长度 数组名.length 动态监测长度
+        var al = ['z', 'r', 'l', 'x'];
+        var mn = al.length;
+        for (var j = 0; j < mn; j++) {
+            console.log(al[j]);
+        }
+        //==============================
+        var a2 = [96, 52, 12, 75, 42, 56];
+        var sum = 0;
+        var average = 0;
+        for (var i = 0; i < a2.length; i++) {
+            sum += a2[i];
+            //加的数组元素as[i] 不是计数器i
+        }
+        average = sum / a2.length;
+        console.log(sum, average); //想要输出多个变量，用逗号分隔
+        //========================================
+        //数组转换为字符串
+        //1.toString() 将数组转换为字符串
+        var a3 = [1, 2, 3]
+        console.log(a3.toString()); //1,2,3
+        //2.join(分隔符)
+        var a4 = ['green', 'blue', 'pink']
+        console.log(a4.join()); //默认分隔符  ，
+        console.log(a4.join('*')); // *
+        //contact() 连接两个或多个数组 不影响一个新的数组
+        //slice() 数组截取slice(begin,end) 返回被截取项目的新数组
+        //splice() 数组删除splice(从第几个开始，删除的个数) 返回被删除项目的新数组 会影响原数组
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

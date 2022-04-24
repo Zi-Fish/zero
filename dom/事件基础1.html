@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #xs {
+            width: 300px;
+            height: 30px;
+            line-height: 30px;
+            color: black;
+            background-color: palegreen;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn">zrl</button>
+    <div>lhxzrl</div>
+    <button id="as">显示当前系统时间</button>
+    <div id="xs">某个时间</div>
+
+    <p></p>
+    <div id="a01"></div>
+    <script>
+        //点击一个按钮 弹出对话框
+        //1.事件是由三部分组成 事件源 事件类型 事件处理程序 事件三元素
+        //(1)事件源 事件被触发的对象
+        var btn1 = document.getElementById('btn');
+        //(2)事件类型 如何触发 什么事件
+        //(3)事件处理程序 通过一个函数赋值的方式 完成
+        btn1.onclick = function() {
+                alert('lx')
+            }
+            //=======================================
+            //执行事件的步骤
+            //1.获取事件源
+        var div1 = document.querySelector('div')
+            //2.注册事件
+            //div.onclick
+            //添加事件处理程序(采取函数赋值形式)
+        div1.onclick = function() {
+                console.log('被选中了')
+            }
+            //onclick鼠标左键点击 onmouseover鼠标经过触发 onmouseout鼠标离开触发 onfocus 获得鼠标焦点触发 onblur 失去鼠标焦点触发 onmousemove 鼠标移动触发 onmouseup鼠标弹起触发 onmousedown鼠标按下触发
+            //======================================
+            //操作元素
+            //1.改变元素内容
+            //elment.innerText 从起始位置到终止位置的内容 但他去除HTML标签 同时空格和换行也会去掉
+
+        var btnnn = document.getElementById('as')
+        var divvv = document.getElementById('xs')
+        btnnn.onclick = function() {
+            divvv.innerText = getDate();
+        }
+
+        function getDate() {
+            var da = new Date();
+            var year = da.getFullYear();
+            var month = da.getMonth() + 1
+            var dates = da.getDate();
+            var day = da.getDay();
+            var a = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+            return '今天是' + year + '年' + month + '月' + dates + '日' + a[day];
+        }
+        //元素也可以不用添加事件
+        var p = document.querySelector('p')
+        p.innerText = getDate();
+        //elment.innerHTML 从起始位置到终止位置的内容 包括HTML标签 同时保留空格和换行
+        //innerText不识别html标签(非标准) innerHTML识别(w3c)
+        var div = document.getElementById('a01')
+            //a01.innerText = '<strong>今天是：</strong>2022';
+        a01.innerHTML = '<strong>今天是：</strong>2022';
+        //这两个属性是可读写的 可以获取元素里面的内容
+    </script>
+
+</body>
+
+</html>

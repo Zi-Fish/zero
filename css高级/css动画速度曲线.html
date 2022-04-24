@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>速度曲线</title>
+    <style>
+        /* linear 匀速
+        默认ease 以低速开始，然后加快，在结束前变慢
+        ease-in 动画以低速开始
+        ease-out 动画以低速结束
+        ease 动画以低速开始和结束
+        steps（） 指定了时间函数中的间隔数量（步长） */
+        /* 打字机效果 */
+        
+        div {
+            width: 0;
+            height: 50px;
+            font-size: 20px;
+            background-color: aqua;
+            white-space: nowrap;
+            /* 强制文字一行显示 */
+            /* animation: w 4s linear forwards; */
+            animation: w 4s steps(10) forwards;
+        }
+        
+        @keyframes w {
+            0% {
+                width: 0;
+            }
+            100% {
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        一二三四五六七八九十
+    </div>
+</body>
+
+</html>

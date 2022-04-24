@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="begin">开启定时器</button>
+    <button class="stop">停止计时器</button>
+    <script>
+        //1.window.setInterval(回调函数，[间隔的毫秒数]);
+        //格式类似于setTimeout()
+        //setInterval()方法重复调用一个函数，每隔一段时间，就去调用一次回调函数。
+        setInterval(function() {
+                console.log('输出一次')
+            }, 2000)
+            //2.setTimeout 延时时间到了，就去调用这个回调函数，就调用一次，就结束这个定时器
+            //3.setInterval 每隔一段延时时间，就去调用这个回调函数，重复调用
+            //==================================
+            //清除setInterval定时器
+        var begin = document.querySelector('.begin');
+        var stop = document.querySelector('.stop');
+        var timer = null; //全局变量， 一个空对象
+        begin.addEventListener('click', function() {
+            timer = setInterval(function() {
+                console.log('你好吗');
+            }, 1000)
+        })
+        stop.addEventListener('click', function() {
+            clearInterval(timer);
+        })
+    </script>
+</body>
+
+</html>

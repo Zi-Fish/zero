@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //         var str = ''
+        //          var n = prompt('打印多少个星星')
+        //     for (var i = 1; i <= n; i++) {
+        //    str = str + '❤'
+        //    //一行显示 追加字符串
+        //    }
+        //       console.log(str)
+        //1.双重for循环 语法结构
+        // for (外层初始化变量; 外层条件表达式; 外层操作表达式) {
+        //     for (内层初始化变量; 内层条件表达式; 里层操作表达式) {
+        //         //执行语句
+        //     }
+        // }
+        //2.可以把里面的循环看作外层循环的语句
+        //3.外层循环一次 里层的循环执行全部
+        // for (var i = 1; i <= 5; i++) {
+        //     console.log('这是外层循环' + i + '次');
+        //     for (var j = 1; j <= 5; j++) {
+        //         console.log('这是里层循环第' + j + '次');
+        //     }
+        // var str = '';
+        // var m = prompt('行');
+        // var n = prompt('列');
+        // for (var i = 1; i <= m; i++) { //外层循环负责打印五行
+        //     for (var j = 1; j <= n; j++) { //内层循环负责一行打印五个星星,递减
+        //         str = str + '❤';
+        //     }
+        //     str = str + '\n'; //打印完一行换行
+        // }
+        // console.log(str);
+        //打印倒三角案例
+        var str = '';
+        for (i = 1; i <= 10; i++) {
+            for (j = i; j <= 10; j++) {
+                str = str + '❤';
+            }
+            str += '\n'
+        }
+        console.log(str)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

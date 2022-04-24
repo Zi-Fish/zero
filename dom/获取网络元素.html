@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div id="time">2022-4-12</div>
+    <ul id="ul1">
+        <li>知否知否！+1</li>
+        <li>知否知否！</li>
+        <li>知否知否！</li>
+        <li>知否知否！</li>
+        <li>知否知否！</li>
+    </ul>
+    <div class="box">盒子1</div>
+    <div class="box">盒子2</div>
+    <div id="nav">
+        <ul>
+            <li>首页</li>
+            <li>产品</li>
+        </ul>
+    </div>
+    <script>
+        //因为文档从上往下加载 所以先写标签
+        //1.根据id来获取
+        //getElementById() 返回的是object 一个元素对象
+        //参数是一个严格的字符串
+        var timer = document.getElementById('time')
+        console.log(timer)
+        console.dir(timer)
+            //console.dir 打印返回的元素对象 更好的查看里面的属性和方法
+            //=====================================
+            //2.根据标签名获取 
+            //getElementsByTagName()可以以返回带有指定标签名的对象集合
+            //1. 返回的是 获取过来元素对象的集合 以伪数组的形式存储
+        var lis = document.getElementsByTagName('li')
+        console.log(lis)
+        console.log(lis[0])
+            //2.依次打印里面元素 采用遍历的方式
+        for (var i = 0; i < lis.length; i++) {
+            console.log(lis[i])
+        }
+        //3.如果只有一个相匹配的元素，返回的依然是一个伪数组，没有这个元素，返回的是空的伪数组
+        //4.还可以指定某个元素（必须指明）内部所有含有指定标签名的子元素
+        //elment.etElementsByTagName('标签名');
+        //console.log(ul[0].getElementsByTagName('li'));
+        var ul = document.getElementById('ul1')
+        console.log(ul.getElementsByTagName('li'))
+            //=======================================
+            //3.H5新增\=
+            //1.document.getElementsByClassName('类名');//根据类名返回元素对象集合
+        var boxs = document.getElementsByClassName('box');
+        console.log(boxs);
+        //2.querySelector 返回指定选择器的第一个元素对象 里面的选择器要加符号
+        var boxf = document.querySelector('.box')
+        console.log(boxf)
+        var nav1 = document.querySelector('#nav')
+        console.log(nav1)
+            //3.querySelectorAll 返回指定选择器的全部元素对象 里面的选择器要加符号
+        var boxq = document.querySelectorAll('.box')
+        console.log(boxq)
+            //4.特殊元素获取
+            //1.获取body元素
+        var bodye = document.body;
+        console.log(bodye)
+        console.dir(bodye)
+            //2.获取HTML元素
+            // var html1 = document.html;//undefined
+        var html1 = document.documentElement;
+        console.log(html1)
+    </script>
+</body>
+
+</html>

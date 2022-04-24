@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>常见网页布局</title>
+    <style>
+        /* 浮动布局注意点：1.浮动经常和盒子的父元素搭配 
+        2.一个元素浮动了，理论上其他的兄弟元素也要浮动。 */
+        /* 浮动的盒子只会影响浮动盒子的后面的标准流，不会影响前面的。 */
+        
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        .top {
+            height: 50px;
+            background-color: gray;
+        }
+        
+        .box {
+            width: 980px;
+            margin: 0 auto;
+            height: 300px;
+            background-color: aqua;
+        }
+        
+        .banner {
+            width: 980px;
+            height: 150px;
+            background-color: gray;
+            margin: 10px auto;
+        }
+        
+        .box .last {
+            margin-right: 0;
+        }
+        
+        .footer {
+            height: 200px;
+            background-color: gray;
+        }
+        
+        .box li {
+            float: left;
+            width: 237px;
+            height: 300px;
+            background-color: gray;
+            margin-right: 10px;
+        }
+        
+        .box .last {
+            margin-right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top">top</div>
+    <div class="banner">banner</div>
+    <div class="box">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li class="last">4</li>
+        </ul>
+    </div>
+    <div class="footer">footer</div>
+</body>
+
+</html>

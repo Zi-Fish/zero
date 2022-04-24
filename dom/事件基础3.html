@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: #e2e;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+
+    <script>
+        //样式属性操作
+        //js修改style样式操作 产生的是行内样式，css权重比较高
+        var div1 = document.querySelector('div');
+        div1.onclick = function() {
+            //div.style里面的属性 采取驼峰命名法
+            this.style.backgroundColor = 'pink';
+            this.style.width = '300px'
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        css三角强化
+    </title>
+    <style>
+        /* 直角三角形 */
+        
+        .box1 {
+            width: 0;
+            height: 0;
+            border-top: 100px solid transparent;
+            /* 再把top颜色改为透明,宽度调大 */
+            border-right: 50px solid skyblue;
+            /* border-bottom: 0px solid blue; */
+            /* 先去掉bottom */
+            /* border-left: 0px solid green; */
+            /* 再去掉left */
+        }
+        /* border-color：transparent skyblue transparent transparent
+        border-style：soild;
+        border-width:100px 50px 0 0;*/
+        
+        .price {
+            width: 160px;
+            height: 24px;
+            line-height: 24px;
+            border: 1px solid red;
+            margin: 0 auto;
+        }
+        
+        .ms {
+            position: relative;
+            float: left;
+            width: 90px;
+            height: 100%;
+            background-color: red;
+            text-align: center;
+            color: #fff;
+            font-weight: 700;
+        }
+        
+        .ms i {
+            position: absolute;
+            width: 0;
+            height: 0;
+            right: 0;
+            top: 0;
+            border-color: transparent #fff transparent transparent;
+            border-style: solid;
+            border-width: 24px 10px 0 0;
+        }
+        
+        .origin {
+            font-size: 12px;
+            color: gray;
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+    <div class="price">
+        <span class="ms">￥1650
+            <i></i>
+        </span>
+        <span class="origin">￥5650</span>
+    </div>
+</body>
+
+</html>

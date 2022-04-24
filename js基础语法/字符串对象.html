@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //基本包装类型
+        var str = 'andy'
+        console.log(str.length)
+            //基本包装类型：就是把简单数据类型包装为复杂数据类型
+            //(1)简单数据类型包装为复杂数据类型
+        var temp = new String('an');
+        //2.把临时变量的值给 str
+        str = temp;
+        //3.销毁这个临时变量
+        temp = null;
+        //字符串的不可变性
+        var str1 = 'any'
+        console.log(str1);
+        str1 = 're'
+        console.log(str1)
+            //因为字符串的不可变所以不要大量的拼接字符串
+            //1.根据字符返回位置
+            //str.indexOf(‘要查找的字符’，[起始的位置]) 从起始位置开始查找字符
+
+        //2.根据位置返回字符
+        //(1)charAt(index)
+        var str = 'andy';
+        console.log(str.charAt(3));
+
+        //遍历所以有字符
+        for (var i = 0; i < str.length; i++) {
+            console.log(str.charAt(i));
+        }
+        //(2)charCodeAt(index)
+        //返回相应索引号的字符ASCII值 目的：判断用户按下了哪个键
+
+        var str = 'andy';
+        console.log(str.charCodeAt(0)); //97
+        //(3)str[index]
+        //H5 新增
+        var str = 'andy';
+        console.log(str[0]); //a
+        //3.连接字符串
+        //语法：concat(‘字符串1‘,‘字符串2’,’字符串2’…)
+
+        var str = 'andy';
+        console.log(str.concat('red'));
+        //4.截取字符串
+        //语法：substr(‘截取的起始位置’, ‘截取几个字符’)
+
+        var str = 'asdf';
+        console.log(str.substr(2, 2)); //df
+        //5.替换字符
+        //格式：replace(‘被替换的字符’, ‘替换为的字符’)
+        var st = 'andtr'
+        console.log(st.replace('a', 'd'))
+            //只替换第一个字符；
+            //6.字符转换为数组
+            //格式：split(‘分隔符’)
+
+        //split没有分隔符无法转换；区分join()把数组转换为字符串
+        var str8 = '1,2,3,4';
+        console.log(str8.split(','));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

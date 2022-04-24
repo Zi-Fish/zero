@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" style="width: 200px;"></div>
+    <script>
+        //offset与style的区别
+        var box = document.querySelector('.box');
+        console.log(box.offsetWidth); //可以获得任意样式表的样式值，无单位，只读，适合获取元素位置
+        console.log(box.style.width); //只能获得行内样式表的样式值，有单位，可读写，赋值，适合给元素更改值
+    </script>
+</body>
+
+</html>

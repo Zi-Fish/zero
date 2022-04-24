@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>知否知否，应是绿肥红瘦！</li>
+        <li>知否知否，应是绿肥红瘦！</li>
+        <li>知否知否，应是绿肥红瘦！</li>
+        <li>知否知否，应是绿肥红瘦！</li>
+        <li>知否知否，应是绿肥红瘦！</li>
+    </ul>
+    <script>
+        // 事件委托也称为事件代理 在jQuery里被称为事件委派
+        // 事件委托的核心原理：给父节点添加侦听器， 利用事件冒泡影响每一个子节点
+        var ul = document.querySelector('ul');
+        ul.addEventListener('click', function(e) {
+            // alert('知否知否，点我应有弹框在手！');
+            // e.target 这个可以得到我们点击的对象
+            var btns = document.getElementsByTagName('li');
+            //伪数组
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].onclick = function() {
+                    for (var i = 0; i < btns.length; i++) {
+                        //先把背景颜色都去掉
+                        btns[i].style.backgroundColor = '';
+                    }
+                    //再使当前元素变色
+                    this.style.backgroundColor = 'red';
+                }
+            }
+            //e.target.style.backgroundColor = 'pink';
+        })
+    </script>
+</body>
+
+</html>

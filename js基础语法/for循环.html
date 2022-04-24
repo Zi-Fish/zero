@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1.for 重复执行某些代码，通常和计数有关系
+        //2.for 语法结构
+        /* for (初始化变量; 条件表达式; 操作表达式) {
+             //循环体
+         }*/
+        //初始化变量 就是用var 声明的一个普通变量，通常用于作为计数器使用
+        //条件表达式 终止条件，决定每次循环是否继续执行
+        //操作表达式 是每次循环最后执行的代码，通常对计数器变量进行更新
+        for (var i = 1; i <= 100; i++) {
+            console.log('你好')
+        } //for循环可以重复指向不同的代码
+        /*for (var i = 1; i <= 100; i++) {
+            console.log('这个人今年' + i + '岁')
+        }*/
+        //重复相同操作
+        var sum = 0;
+        for (var i = 0; i <= 100; i++) {
+            //sum = sum + i;
+            sum += i;
+        }
+        console.log(sum)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

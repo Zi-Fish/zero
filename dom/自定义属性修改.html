@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo" inde="0111"></div>
+    <script>
+        var div = document.querySelector('div');
+        //1.获取元素的属性值 元素本身的属性
+        //(1)element.属性
+        console.log(div.id);
+        // (2) Element.getAttribute('属性') 自己添加的属性即是自定义属性 index
+        console.log(div.getAttribute('id'))
+        console.log(div.getAttribute('inde'))
+            //2.设置属性值
+            //(1)element.属性='值'
+        div.id = 'test';
+        div.className = 'te'
+            //(2)element,setAttribute('属性','值') 主要针对于自定义属性
+        div.setAttribute('inde', '002')
+        console.log(div.getAttribute('id'))
+
+        console.log(div.getAttribute('class')) //class比较特殊
+            //3.移除属性
+            //element.removeAttribute('属性')；
+        div.removeAttribute('inde');
+        console.log(div.getAttribute('inde'))
+    </script>
+
+</body>
+
+</html>

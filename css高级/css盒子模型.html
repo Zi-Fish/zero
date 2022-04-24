@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子模型</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        /*div {
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+            border: 20px solid red;
+            padding: 15px;
+            box-sizing: content-box;
+        }*/
+        /* css3中可以通过box-size来指定盒模型，有2个值：content-box、border-box */
+        /* box-sizing::content-box盒子大小为width+padding+border。
+        border盒子大小为width*/
+        
+        p {
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+            border: 20px solid red;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+        /* css图片模糊，filter:blur（5px）;blur模糊处理，数值越大越模糊，filter：函数； */
+        
+        .father {
+            width: 300px;
+            height: 200px;
+            background-color: palegreen;
+        }
+        
+        .son {
+            width: calc(100% - 50px);
+            /* 括号里使用+-*、/ */
+            height: 30px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div>小猪佩齐克</div>
+    <p>zrl</p>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+</body>
+
+</html>

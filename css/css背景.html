@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 1000px;
+            height: 1000px;
+            /* background-color: aqua; */
+            /* 背景颜色,默认透明*/
+            background-image: url(images/神明.jpg);
+            /*背景图片,会压住背景颜色*/
+            background-repeat: no-repeat;
+            /*背景平铺,默认平铺.全平铺. 
+            沿着x轴平铺:background-repeat: repeat-x;;*/
+            /* 背景图片位置:background-position: x y; 
+            length:百分数 由浮点数和单位标识符组成的长度值,
+            position:top center bottom left right 方位名词;*/
+            background-position: center top;
+            /*方位名词顺序不影响,只有一个方位名词,另一个省略,则第二个居中对齐.*/
+            /* bamground-position:20px 30px;先x再y */
+            /* 混合写也是先x再y */
+            /* background-attachment:背景图像固定 */
+            background-attachment: fixed;
+            /* fixed固定，scoll背景图像随对象内容滚动。 */
+            /* 简写：
+            background:translate url() repeat-y fixed top
+            顺序无要求，一般为背景颜色，背景图片地址 背景平铺 背景图像滚动 背景图片位置 */
+            background: rgba(0, 0, 0, 0.1);
+            /* 背景色半透明：最后取值0-1，越小越透明 */
+        }
+    </style>
+</head>
+
+<body>
+    <div>123</div>
+
+</body>
+
+</html>

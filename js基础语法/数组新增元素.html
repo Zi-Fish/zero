@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1.可以通过修改length长度来实现数组扩容的目的
+        //length属性是可读写的
+        var arr = ['red', 'green', 'blue', 'zrl'];
+        arr.length = 5; //把数组长度修改为5，里面应该有五个元素，包括一个空元素
+        console.log(arr)
+        console.log(arr[4]) //未定义 undefined
+            //========================================
+            //2.新增数组元素 修改索引号
+        var arr1 = ['red', 'green', 'blue', 'zrl'];
+        arr1[4] = 'lhx';
+        console.log(arr1[4]); //lhx 索引号未被占用，追加元素
+        arr1[0] = '412'
+        console.log(arr1[0]) //被占用，替换掉原来的元素
+        console.log(arr1)
+        arr1 = '没有了'
+        console.log(arr1); //不能直接给数组名赋值，否则里面的元素就都没有了
+        //========================================
+        //添加删除数组元素
+        //1.push() 在数组的末尾 添加一个或者多个数组元素
+        arr.push('zrl', 412)
+        console.log(arr)
+            //1.push是可以给数组追加新的元素
+            //2.push()参数直接写数组元素就可以了
+            //3.push完毕后，返回的结果是 新数组的长度
+        console.log(arr.push('zrl', 412));
+        //4.原数组也会发生变化
+        //=====================================
+        //2.unshift 在数组的开头添加一个或多个元素
+        arr.unshift('rep', 619);
+        console.log(arr)
+            //1.unshift是可以给数组追加新的元素
+            //2.unshift()参数直接写数组元素就可以了
+            //3.unshift完毕后，返回的结果是新数组的长度
+            //4.原数组也会发生变化
+            //====================================
+            // 3.pop() 可以删除数组的最后一个元素
+        arr.pop();
+        console.log(arr.pop())
+            //1pop(是可以给数组删除最后一个元素
+            //2.pop()无参数
+            //3.pop完毕后，返回的结果是删除的那个元素
+            //4.原数组也会发生变化
+        arr.shift();
+        console.log(arr.shift())
+            //1.shift(是可以给数组删除最后一个元素
+            //2.shift()无参数
+            //3.shift完毕后，返回的结果是删除的那个元素
+            //4.原数组也会发生变化
+            //=====================================
+        var a = [7800, 86000, 1500, 1300, 150, 5300, 50, 55555]
+        var newA = [];
+        for (var i = 0; i < a.length; i++) {
+            if (a[i] < 2000) {
+                newA.push(a[i])
+            }
+        }
+        console.log(newA);
+        //==========================================
+        //1.翻转数组
+        var b = ['zrl', 412, 619, 'lx'];
+        b.reverse();
+        console.log(b);
+        //2.数组排序
+        var b1 = [5, 6, 9, 7, 5, 2, 65, 12]
+        b1.sort(function(a, b) {
+            return a - b; //升序
+            // return b-a;降序
+        });
+        console.log(b1); //单独的sort()有问题，多位数先看左边
+        //==========================================
+        //返回数组索引号方法 indexOf
+        //只返回第一个满足条件的索引号
+        //如果没有这个元素 返回-1
+        var z = ['a', 't', 'd', 's', 'f', 't']
+        console.log(z.indexOf('t'))
+            //lastIndexOf() 倒着查 查不到返回-1
+        console.log(z.lastIndexOf('t'))
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

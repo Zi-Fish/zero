@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1.需要一个临时变量
+        //2.将a1的值赋给临时变量temp
+        //3.将a2的值赋给a1
+        //4.将临时变量的值赋给a2
+        var temp; //声明一个临时变量为空
+        var a1 = '青';
+        var a2 = '红';
+        temp = a1; //把右边给左边
+        a1 = a2;
+        a2 = temp;
+        console.log(a1);
+        console.log(a2);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

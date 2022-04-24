@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //Date() 日期对象 是一个构造函数 必须是有new 来调用创建我们的日期对象
+        var arr = new Array(); //创建一个数组对象
+        var arr = new Object(); //创建一个的对象实例
+        //1.使用Date 如果没有参数 返回系统的当前时间
+        var date = new Date();
+        console.log(date);
+        //2.参数常用得写法 数字型 2009，10，01 或者 字符型 '2019-10-1 8:9:8'
+        var date1 = new Date(2029, 10, 01)
+        console.log(date1) //返回的是11月 不是10月
+        var date2 = new Date('2019-10-01 8:9:6')
+        console.log(date2)
+            //=======================================
+            //格式化日期 年月日
+        var da = new Date();
+        console.log(da.getFullYear()); //返回当前日期的年 2019
+        console.log(da.getMonth() + 1);
+        console.log(da.getDate) //加一
+        console.log(da.getDay) //星期 星期天是0
+        var year = da.getFullYear();
+        var month = da.getMonth() + 1
+        var dates = da.getDate();
+        var day = da.getDay();
+        var a = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+        console.log('今天是' + year + '年' + month + '月' + dates + '日' + a[day])
+            //=======================================
+        var dq = new Date();
+        console.log(dq.getHours())
+        console.log(dq.getMinutes())
+        console.log(dq.getSeconds())
+            //要求封装一个函数返回当前的时分秒
+        function getTime() {
+            var time = new Date();
+            var h = time.getHours()
+            var m = time.getMinutes()
+            m = m < 10 ? '0' + m : m
+            var s = time.getSeconds()
+            s = s < 10 ? '0' + s : s
+            return h + ':' + m + ':' + s;
+        }
+        console.log(getTime());
+        //=======================================
+        //获取日期的总的毫秒形式(时间戳)
+        //Date对象是从1970年1月1日开始
+        //1.通过valueOf() getTime()
+        var ds = new Date();
+        console.log(ds.valueOf())
+        console.log(ds.getTime())
+            //2.简单的写法
+        var ds1 = +new Date();
+        console.log(ds1)
+            //H5新增的
+        console.log(Date.now())
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

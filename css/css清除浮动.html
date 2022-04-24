@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 选择器{clear:属性值；}
+        left:清除左浮动影响 right both 两侧同时清除。 */
+        /* 1.父级添加overflow
+        2.父级添加after伪属性
+        3.父级添加双伪元素
+        额外标签法 ：在浮动元素末尾添加一个空的标签(块级元素)，例如<div style="clear:both"></div> 或其他标签如：</br>*/
+        /* overflow：hidden auto scroll 无法显示溢出的部分 */
+        /* after伪元素：.clearfix::after{
+            content:"";
+            display:block;
+            height:0;
+            clear::both;
+            visibility:hidden;
+        }
+        .clearfix{/*IE6、7专有
+        *zoom：1}*/
+        /* 双伪元素：。clearfix：before，。clearfix：after{
+            content:"";
+            display:table;
+        }
+        .clearfix:after{
+            clear:both;
+        } 
+        .clearfix{
+            *zoom:1;
+        }*/
+        /* 由于父级盒子在很多情况下不方便给高度，但是子盒子浮动又不占有位置，最后父级盒子高度为0时，就会影响下面的标准流盒子。 */
+        /* 由于浮动元素不再占有原文档流的位置，所以会对后面的元素排版产生影响 */
+    </style>
+</head>
+<!-- ) 清除浮动的本质是清除浮动元索造成的影响
+如果父盒子本身有高度，则不需要清除浮动
+清除浮动之后，父级就会根据浮动的子盒子自动检测高度。父级有了高度，就不会就响下面的标准流了
+ -->
+
+<body>
+    <div class="1">1</div>
+    <div class="2">2</div>
+    <div class="3">3</div>
+</body>
+
+</html>

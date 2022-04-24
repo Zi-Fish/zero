@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D旋转</title>
+    <style>
+        /* 2d旋转是指元素在平面内顺时针或者逆时针旋转
+        transform：rotate（度数）； 单位是deg；
+        角度为正时，顺时针，负，逆时针
+        默认旋转中心为元素的中心点；*/
+        
+        img {
+            width: 400px;
+            /* transform: rotate(45deg); */
+            border-radius: 50%;
+            border: 5px solid aqua;
+            /* 过渡 */
+            transition: all 1s;
+        }
+        
+        img:hover {
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+
+<body>
+    <img src="images/神明.jpg" alt="">
+</body>
+
+</html>

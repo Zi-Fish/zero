@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>结构伪类选择器</title>
+    <style>
+        ul li:first-child {
+            background-color: palegreen;
+        }
+        
+        ul li:last-child {
+            background-color: blue;
+        }
+        /* ul li:nth-child(6) 权重为10{ */
+        /* background-color: #ff7f; */
+        /* } */
+        /* nth-child(n)选择某个父元素的一个或多个特定的子元素。n可以是数字，关键字和公式。
+        数字是第几个开始
+        even偶数，odd奇数 */
+        /* ul li:nth-child(odd) {
+            background-color: blueviolet;
+        }*/
+        /* 3.nth-child(n) 从0开始，每次加1 往后面计算 这里面必须是n 不能是其他字母。等于选择了所有孩子 */
+        
+        ul li:nth-child(n) {
+            background-color: aquamarine;
+        }
+        /* 公式：2n 偶数 2n+1 奇数 5n 5,10,15-- n+5 从第五个开始 -n+5 前五个 */
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>我是第1个孩子</li>
+        <li>我是第2个孩子</li>
+        <li>我是第3个孩子</li>
+        <li>我是第4个孩子</li>
+        <li>我是第5个孩子</li>
+        <li>我是第6个孩子</li>
+        <li>我是第7个孩子</li>
+        <li>我是第8个孩子</li>
+    </ul>
+</body>
+
+</html>

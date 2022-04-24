@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+        }
+        /* 固定定位：fixed
+        选择器{position:fixed;}
+        使元素固定于浏览器可视区的位置 */
+        /* 特点：以浏览器的可视化窗口为参照点移动元素
+        2.与父元素没有任何关系
+        3.不能随滚动条滚动。
+        4.不占有原来的位置，脱离标准流 */
+        
+        .w1 {
+            position: fixed;
+            top: 50px;
+            right: 50px;
+        }
+        /* 固定盒子在版心右侧：
+        1.让固定定位的盒子left：50%,走到浏览器可视区（也可以看作版心）的一半位置。
+        2.让固定定位的盒子margin-left版心宽度的一半距离。多走版心宽度的一半位置就可以让固定定位的盒子贴着版心对齐了。 */
+    </style>
+</head>
+
+<body>
+    <div class="w1"><img src="images/神明.jpg" alt=""></div>
+
+</body>
+
+</html>

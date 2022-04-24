@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>缩放</title>
+    <style>
+        /* 缩放：scale
+        transform;scale(x,y);
+       1. 注意其中的x和y用逗号分隔
+2.transformiscale(1,1) ;宽和高都放大一倍，相对于没有放大
+3.transformiscale(2.2) :宽和高都放大了2倍
+4.transformscale(2) ，只写一个参数，第二个参数则和第一个参数一样，相当于scale(2，2)
+5.tansloumscale(0.5，0.5):缩小
+6.sacle缩故最大的优势:可以设置转换中心点缩放，默认以中心点缩放的。而且不影响其他盒子
+ */
+        
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+            margin: 100px auto;
+            transition: all 2s;
+            transform-origin: left bottom;
+        }
+        
+        div:hover {
+            /* 1.里面写的数字不跟单位，就是倍数的意思，1就是1倍，2就是2倍。 */
+            transform: scale(2, 2);
+            /* 前宽后高， */
+            /* transform：scale（2）；
+            等比例缩放，宽和高同时修改； */
+            /* 以前直接修改宽和高，会影响其他盒子。 */
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

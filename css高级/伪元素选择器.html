@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>伪元素选择器</title>
+    <style>
+        /* 伪元素选择器可以利用css创建标签元素，简化html结构 行内元素的盒子
+        element（元素）::
+        ::after在元素后面插入内容
+        ::before在元素前面插入内容 都必须有content属性 权重为1，和标签选择器一样*/
+        
+        divw {
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+        }
+        
+        div::before {
+            /* content必须写 */
+            content: '我';
+        }
+        
+        div::after {
+            content: "神";
+        }
+    </style>
+</head>
+
+<body>
+    <div>zrl</div>
+</body>
+
+</html>

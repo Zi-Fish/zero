@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //switch语句也是多分支语句，多选一
+        switch (表达式) {
+            case value1:
+                执行语句1;
+                break;
+            case value2:
+                执行语句2;
+                break;
+            case value3:
+                执行语句3;
+                break;
+                // ...
+            default:
+                执行最后的语句;
+        } //表达式里的值和case后面的选项值相匹配，匹配上谁执行谁
+        //都不匹配，执行default里的语句
+        //效率更高，直接跳转
+        //注意事项：
+        //1.表达式经常是变量
+        //2.num的值和case里的值相匹配的时候全等，值和数据类型一致
+        //3.如果当前case没有break，则不会退出switch语句，继续执行下一个case
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

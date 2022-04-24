@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>123</li>
+    </ul>
+    <script>
+        //1.创建节点 元素节点
+        //creatElement()
+        var li = document.createElement('li');
+        //2.添加节点 node.appendChild(child) node 父级 child 子级 后面追加元素 类似于数组中的push
+        var ul = document.querySelector('ul')
+        ul.appendChild(li)
+            //3.添加节点 node.insertBefore(child,指定元素) 在指定元素前面添加元素
+        var li1 = document.createElement('li')
+        ul.insertBefore(li1, ul.children[0]);
+        //4.1.创建元素 2.添加元素
+        //=======================================
+        //三种动态创建元素区别
+        //1.document.write()//很少使用
+        // 1.document.write()是直接将内容写入页面的内容流，但是文档执行完毕，则他会导致页面全部重绘
+        //2.element.innerHTML() 多个创建时，采用拼接字符串的方式会更耗时 使用数组 结构更复杂，用时更短
+        //3.document.createElement() 多个创建时效率较低 结构清晰
+    </script>
+</body>
+
+</html>

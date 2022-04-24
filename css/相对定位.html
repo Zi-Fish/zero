@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            background-color: aqua;
+        }
+        
+        .z1 {
+            position: static;
+            /* 静态定位 */
+        }
+        
+        .z2 {
+            position: relative;
+            /*相对定位*/
+            top: 100px;
+            /*向下移100px*/
+            left: 100px;
+            /*向右移100px*/
+        }
+    </style>
+    <!-- 为什么需要定位：
+    1.某个元素可以自由地在一个盒子内移动位置，并且压住其他盒子
+2.当我们滚动窗口时，某些盒子是固定在屏幕某个位置的 -->
+    <!-- 定位：将盒子定在某一个位置，所以定位也是在摆放盒子，按照定位的方式移动的盒子。 
+定位=定位模式+边偏移。
+定位模式：决定元素在文档中的定位方式。
+边偏移决定了该元素的最终位置。 -->
+    <!-- 定位模式通过css的position属性设置：static静态定位 relative相对定位 absolute绝对定位 fixed固定定位 -->
+</head>
+<!-- 静态定位:元素的默认定位方式，无定位
+选择器：{position：static；} 
+静态定位按照标准流特性拜访位置，无边偏移。-->
+<!-- 相对定位：元素在移动位置时，相对于它原来的位置来说的：
+选择器{position：relative；}还保留原来的位置。后面的盒子仍然以标准流的房市对待他。 -->
+
+<body>
+    <div class="z1">456</div>
+    <div class="z2">123</div>
+    <div class="z3"></div>
+</body>
+
+</html>

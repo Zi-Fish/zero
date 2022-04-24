@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vertical-align属性应用</title>
+    <style>
+        /* css的vertical-align属性经常用于设置图片和表单（行内块元素）与文字垂直对齐。只针对行内元素和行内块元素。
+        vertical-align：baseline 默认，元组放置在父元素的基线上。 基线3。
+        top 把元素的顶端与行中最高元素的顶端对齐 顶线1
+        middle 把此元素放置在父元素的中部 中线2
+        bottom 把元素的顶端与行中最低的元素的顶端对齐 底线4*/
+        
+        div {
+            border: 2px solid aqua;
+        }
+        
+        img {
+            width: 200px;
+            vertical-align: baseline;
+            /* vertical-align: top; */
+            /* vertical-align: middle; */
+            /* vertical-align: bottom; */
+        }
+        /* 图片底侧会有一个空白缝隙，原因是行内块元素和文字的基线对齐 */
+        /* 只要将vertical-align属性，不设为baseline就行，默认改成其他三种。 */
+        /* 将图片转换为块级元素。display：block； */
+    </style>
+</head>
+
+<body>
+    <img src="images/神明.jpg" alt="">pink
+    <div><img src="images/神明.jpg" alt="">pp逢魔时王</div>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css动画</title>
+    <style>
+        /* 用keyframes定义动画，类似于定义选择器
+@keyframes 动画名称{
+    0%{
+        width: 100px;
+    }
+    100%{
+        width: 100px;
+    }
+} 
+0%是动画的开始，100%是动画的完成。这样的规则就是动画序列。
+
+●在 @keyframes中规定项CSS样式,就能创建由当前样式逐渐政为新样式的动画效果。
+●动画是使元素从一 种样式逐渐变化为另一种样式的效果，您可以改变任意多的样式任意多的次数
+请用百分比来规定变化发生的时问 ，或用关键词"from" 和"to°，等向于 0%和100%。
+*/
+        
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+            /* margin: 100px auto; */
+            /* 调用动画 */
+            animation-name: move;
+            /* 持续时间 */
+            animation-duration: 5s;
+        }
+        /* 定义动画 */
+        
+        @keyframes move {
+            0% {
+                transform: translateX(0px);
+            }
+            100% {
+                transform: translateX(1000px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3d转换</title>
+    <style>
+        body {
+            /* 透视写在被观察元素的父盒子上
+            透视值越小，元素越大，z轴越大，元素越大 */
+            perspective: 300px;
+        }
+        /* 三维坐标系：x轴：水平向右 y轴垂直向下 z轴垂直屏幕 外正内负 */
+        /* 3D位移：translate3d(x,y,x)
+        3D旋转：rotate(x,y,z)
+        透视：perspective
+        3D呈现transform-style */
+        /* 3d位移比2D多一个z轴，单独写translateZ（）一般用px作为单位·
+        或者translate3d(x,y,z)合在一起写 */
+        
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+            /* transform: translateX(100px) translateY(100px) translateZ(100px);合写 */
+            /* 搭配透视（视距）perspective出效果，透视的单位是像素。
+            x,y,z不能省，没有就写0 */
+            transform: translate3d(400px, 100px, 50px);
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

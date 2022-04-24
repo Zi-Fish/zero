@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动画简写属性</title>
+    <style>
+        @keyframes move {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(1000px, 1000px);
+            }
+        }
+        /* 动画简写属性：
+        animation：动画名称 持续时间 运动曲线 何时开始 播放次数 是否反方向 */
+        
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            animation: move 5s ease-in 2s 5 alternate forwards;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

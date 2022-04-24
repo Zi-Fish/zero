@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            var btn = document.querySelector('button');
+            btn.addEventListener('click', function() {
+                alert('点击一下')
+            })
+        }
+        window.addEventListener('load', function() {
+                alert(22);
+            })
+            //window.onload是窗口(页面)加载事件，当文档内容完全加载完成会触发该事件(包括图像，脚本文件，css文件等)，就调用的处理函数
+            //window.onload传统注册事件方式只能写一次，如果有多个，以最后一个window.onload为准
+            //如果使用addEventListener则没有限制
+        document.addEventListener('DOMContentLoaded', function() {
+                alert(33)
+            })
+            //=====================================
+            // DOMContentLoaded事件触发时，仅当dom加载完成时，不包括样式表，图片，flash等 ie9
+            //加载更快
+    </script>
+</head>
+
+<body>
+    <button>点击</button>
+
+</body>
+
+</html>

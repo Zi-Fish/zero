@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 1.display显示隐藏
+2.visibility显示隐藏
+3.overflow溢出显示隐藏 */
+        
+        .peppa {
+            /* display: none; */
+            /*隐藏元素后,不再占有原来的位置*/
+            display: block;
+            width: 200px;
+            height: 200px;
+            background-color: olivedrab;
+        }
+        
+        .george {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+        /* display:none;隐藏对象
+        display:block:除了转换为块级元素之外,同时还有显示元素的意思 */
+        /* visibility:visible;元素可视
+        visibility:hidden;元素隐藏 */
+        
+        .baba {
+            visibility: hidden;
+            /* visibility隐藏元素后,继续占有原来的位置. */
+            width: 300px;
+            height: 100px;
+            background-color: bisque;
+        }
+        
+        .mama {
+            width: 300px;
+            height: 100px;
+            background-color: blueviolet;
+        }
+        /* overflow:visible; 超出的显示,不加滚动条.
+        overflow:hidden超出的隐藏,不显示滚动条
+        overflow:scroll;溢出部分显示滚动条,未超出也显示滚动条
+        overflow:auto;超出显示滚动条,未超出不显示*/
+    </style>
+</head>
+
+<body>
+    <div class="peppa">佩奇</div>
+    <div class="george">乔治</div>
+    <div class="baba">猪爸爸</div>
+    <div class="mama">猪妈妈</div>
+</body>
+
+</html>

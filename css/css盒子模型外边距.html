@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8 ">
+    <meta http-equiv="X-UA-Compatible " content="IE=edge ">
+    <meta name="viewport " content="width=device-width, initial-scale=1.0 ">
+    <title>Document</title>
+    <style>
+        /* margin外边距：
+        margin-left right top bottom
+        简写方式与padding一致  */
+        
+        * {
+            /*css第一行代码 */
+            margin: 0;
+            padding: 0;
+        }
+        /*行内元素为了兼顾兼容性，尽量只设置左右内外边距，不要设置上下内外边距，但是转换为块级和行内块元素就可以了*/
+        
+        div {
+            height: 100px;
+            width: 200px;
+            margin: 20px;
+            color: aqua;
+            background-color: pink;
+        }
+        /*外边距可以让块级盒子水平居中：
+        1.盒子必须指定宽度
+        2.盒子左右的外边距都设置为auto*/
+        /* 常见写法：margin-left：auto margin-right：auto
+        margin：auto
+        margin：0 auto；
+        行内元素或者行内块元素居中给其父元素添加text-align：center即可。 */
+    </style>
+</head>
+<!-- 塌陷问题：两个嵌套关系（父子关系）的块元素，父元素有上边距同时子元素也有上边距 此时父元素会塌陷较大的外边距值。
+解决方案1.为父元素定义上边框
+2.为父元素定义上下边距
+3.为父元素添加overflow：hidden-->
+
+<body>
+    <div>122</div>
+    <div>456</div>
+    <div>789</div>
+    <!-- 有些网页元素有默认的内外边距。布局前应先清除。 -->
+    <ul>
+        <li>3</li>
+        <li>52</li>
+        <li>zrl</li>
+    </ul>
+</body>
+
+</html>

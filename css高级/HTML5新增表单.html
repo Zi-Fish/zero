@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新增表单</title>
+    <style>
+        input::placeholder {
+            color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <input type="search" name="" id="" required="required" placeholder="zrl" autofocus="autofocus" autocomplete="off">
+        <!-- required:必填，表示该属性内容不能为空
+        placeholder：提示文本；
+    autofocus：自动对焦属性，页面加载完成后自动聚焦在指定表单。
+autocomplete：当用户在字段开始键入时，浏览器基于之前键入过的值，应该显示出在字段中填写的选项。
+默认已经打开，如autocomplete="on",关闭autocomplete ="off"需要放在表单内，同时加上name属性，同时成功提交。
+multiple:可以多选文件提交。 -->
+        <input type="file" multiple="multiple">
+        <input type="submit" value="提交">
+    </form>
+</body>
+
+</html>

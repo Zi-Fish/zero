@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100%;
+            height: 20px;
+            float: left;
+            margin: auto 0;
+        }
+        
+        button {
+            background-color: #fff;
+            color: black;
+            line-height: 20px;
+            margin-right: 100px;
+        }
+        
+        img {
+            display: block;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div><button id="lx">lx</button>
+        <button id="zrl">zrl</button></div>
+    <img src="img/神明.jpg" alt="">
+    <button id="b1">按钮</button>
+    <input type="text" value="输入内容" id="sr">
+    <script>
+        //修改元素属性 src
+        //1.获取元素
+        var lx = document.getElementById('lx');
+        var zrl = document.getElementById('zrl');
+        var img = document.querySelector('img')
+            //2.注册事件 处理程序
+        lx.onclick = function() {
+            img.src = 'img/神明.jpg';
+        }
+        zrl.onclick = function() {
+                img.src = 'img/pig.jpg';
+            }
+            //常用元素属性操作
+            //1.innerText innerHTML改变元素内容
+            //2.src href
+            //3.id alt title
+            //=====================================
+            //表单元素的属性操作 type value checked select disabled
+        var b1 = document.getElementById('b1');
+        var sr = document.getElementById('sr');
+        b1.onclick = function() {
+            //表单里面的值 文字内容通过value来修改了
+            sr.value = '被点击了';
+            //如果想要某个表单被禁用 不能再点击disabled
+            //b1.disabled = true;
+            //this 指向的是时间函数的调用者 btn
+            this.disabled = true;
+        }
+    </script>
+</body>
+
+</html>
