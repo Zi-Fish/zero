@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+        
+        span {
+            position: absolute;
+            left: 0;
+            top: 200px;
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <button>de</button>
+    <div></div>
+    <span>decade</span>
+    <script>
+        // 动画原理
+        // 1. 获得盒子当前位置  
+        // 2. 让盒子在当前位置加上1个移动距离
+        // 3. 利用定时器不断重复这个操作
+        // 4. 加一个结束定时器的条件
+        // 5. 注意此元素需要添加定位， 才能使用element.style.left
+
+        // var timer = setInterval(function() {
+        //     if (div.offsetLeft >= 400) {
+        //         // 停止动画 本质是停止定时器
+        //         clearInterval(timer);
+        //     }
+        //     div.style.left = div.offsetLeft + 1 + 'px';
+        // }, 30);
+        //函数需要传递2个参数，动画对象 和 移动到的距离
+        //简单动画函数 封装obj目标对象 target 目标位置
+        //给不同的元素指定不同的定时器
+        //当不断点击按钮，这个元素会越来越快，因为开启了太多定时器 让定时器唯一
+        function animate(obj, target) {
+            //解决方案：先清除之前的定时器，保留当前定时器
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function() {
+                if (obj.offsetLeft >= target) {
+                    // 停止动画 本质是停止定时器
+                    clearInterval(obj.timer);
+                }
+                obj.style.left = obj.offsetLeft + 1 + 'px';
+            }, 30);
+        }
+        var div = document.querySelector('div');
+        var span = document.querySelector('span');
+        var btn = document.querySelector('button');
+        //调用函数
+        animate(div, 300);
+        btn.addEventListener('click', function() {
+            animate(span, 200);
+        })
+    </script>
+</body>
+
+</html>
