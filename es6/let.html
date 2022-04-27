@@ -9,7 +9,38 @@
 </head>
 
 <body>
+    <script>
+        //声明变量
+        let a;
+        let b, c, d;
+        let e = 100;
+        let f = 524,
+            g = 'love',
+            h = [];
+        //1.变量不能重复声明
+        //let s='luo';
+        //let s='zhu';
+        //2.块级作用域，全局，函数，eval
+        {
+            let qw = '李';
+            var er = '张'; //var 没有块级作用域 在往全局作用域上靠
+        }
+        // console.log(qw); //未定义
+        console.log(er); //张
+        //块级作用域只在代码块里有效 if else while for
 
+        //3.不存在变量提升 不允许变量在声明之前使用
+        console.log(s);
+        var s = '123'; //未定义undefined
+        // let s = '123'; //会报错
+        //4.不影响作用域链
+        let sc = '12';
+
+        function fn() {
+            console.log(sc); //向上找
+        }
+        fn();
+    </script>
 </body>
 
 </html>

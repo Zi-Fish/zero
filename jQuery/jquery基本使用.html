@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jQuery.min.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        //jq的入口函数
+        // $('div').hide();
+        // 1. 等着页面DOM加载完毕再去执行js 代码
+        // $(document).ready(function() {
+        //     $('div').hide();
+        // })
+        // 2.  等着页面DOM加载完毕再去执行js 代码
+        $(function() {
+                $('div').hide();
+
+            })
+            // 1.等着dom结构渲染完毕即可执行代码，不必等到所有外部资源加载完成
+            //2.相当于js中的DOMContentLoaded
+            //3.不同语言js中的load事件是等页面文档，外部js,css文件，图片加载完毕后才执行内部代码
+    </script>
+    <div></div>
+
+</body>
+
+</html>

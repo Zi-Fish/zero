@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // ES6 引入新的声明字符串的方式 反引号『``』 '' "" 
+        //1. 声明
+        // let str = `我也是一个字符串哦!`;
+        // console.log(str, typeof str);
+
+        //2. 内容中可以直接出现换行符 单引号和双引号不能 会出现语法错误 用加号+引号方式连接才行
+        let str = `<ul>
+                    <li>沈</li>
+                    <li>玛</li>
+                    <li>魏</li>
+                    <li>艾</li>
+                    </ul>`;
+        let st = '<ul>123' +
+            '< /ul>'
+            //3. 变量拼接
+        let lovest = '魏翔';
+        //${参数}
+        let out = `${lovest}是我心目中最搞笑的演员!!`;
+        console.log(out);
+    </script>
+</body>
+
+</html>
