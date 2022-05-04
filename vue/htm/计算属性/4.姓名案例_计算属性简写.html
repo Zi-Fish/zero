@@ -44,6 +44,7 @@
             //只考虑读取，不考虑修改时才使用简写
             fullName() {
                 console.log('get被调用了')
+                    //计算属性不能开启异步任务
                 return this.firstName + '-' + this.lastName
             }
         }
