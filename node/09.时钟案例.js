@@ -8,7 +8,7 @@ const regStyle = /<style>[\s\S]*<\/style>/
 const regScript = /<script>[\s\S]*<\/script>/
 
 // 2.1 调用 fs.readFile() 方法读取文件
-fs.readFile(path.join(__dirname, './时钟案例/index.html'), 'utf8', function(err, dataStr) {
+fs.readFile(path.join(__dirname, './index.html'), 'utf8', function(err, dataStr) {
     // 2.2 读取 HTML 文件失败
     if (err) return console.log('读取HTML文件失败！' + err.message)
         // 2.3 读取文件成功后，调用对应的三个方法，分别拆解出 css, js, html 文件
