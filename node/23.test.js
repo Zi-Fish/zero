@@ -1,2 +1,2 @@
-const m = require('./13.exports对象')
+const m = require('./22.exports对象')
 console.log(m)
