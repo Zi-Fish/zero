@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>私有属性</title>
+</head>
+
+<body>
+    <script>
+        class Person {
+            //公有属性
+            name;
+            //私有属性 前面加#
+            #age
+            //===
+            #weight
+            //构造方法
+            constructor(name, age, weight) {
+                this.name = name;
+                this.#age = age; //写全
+                this.#weight = weight;
+            }
+
+            intro() {
+                // 内部可以得到
+                console.log(this.name);
+                console.log(this.#age);
+                console.log(this.#weight);
+            }
+        }
+
+        //实例化
+        const girl = new Person('晓红', 18, '45kg');
+
+        // console.log(girl.name);
+        // console.log(girl.#age);//外部得不到
+        // console.log(girl.#weight);
+
+        girl.intro();
+    </script>
+</body>
+
+</html>

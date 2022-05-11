@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象方法扩展</title>
+</head>
+
+<body>
+    <script>
+        //1. Object.is 判断两个值是否完全相等,和===很像
+        // console.log(Object.is(120, 120));// === 
+        // console.log(Object.is(NaN, NaN));// === 
+        // console.log(NaN === NaN);// false
+
+        //2. Object.assign 对象的合并，重名后面的会把前面的覆盖点，不重名以第一个为准
+        // const config1 = {
+        //     host: 'localhost',
+        //     port: 3306,
+        //     name: 'root',
+        //     pass: 'root',
+        //     test: 'test'
+        // };
+        // const config2 = { 
+        //     host: 'http://atguigu.com',
+        //     port: 33060,
+        //     name: 'atguigu.com',
+        //     pass: 'iloveyou',
+        //     test2: 'test2'
+        // }
+        // console.log(Object.assign(config1, config2));
+
+        //3. Object.setPrototypeOf 设置原型对象  Object.getPrototypeof
+        const school = {
+            name: '尚硅谷'
+        }
+        const cities = {
+                xiaoqu: ['北京', '上海', '深圳']
+            }
+            //把cities当作一个原型对象赋值给schong
+        Object.setPrototypeOf(school, cities);
+        console.log(Object.getPrototypeOf(school));
+        console.log(school);
+    </script>
+</body>
+
+</html>
