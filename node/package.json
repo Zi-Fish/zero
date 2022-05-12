@@ -2,7 +2,8 @@
     "dependencies": {
         "art-template": "^4.13.2",
         "jquery": "^3.6.0",
-        "moment": "^2.29.3"
+        "moment": "^2.29.3",
+        "nrm": "^1.2.5"
     },
     "name": "node",
     "version": "1.0.0",
@@ -13,5 +14,8 @@
     "keywords": [],
     "author": "",
     "license": "ISC",
-    "description": ""
+    "description": "",
+    "devDependencies": {
+        "webpack": "^5.72.1"
+    }
 }
