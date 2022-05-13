@@ -1,0 +1,12 @@
+{
+  "name": "zerolisl_at1",
+  "version": "1.1.0",
+  "main": "zerolisl_at1.js",
+  "description": "提供了格式化时间、HTMLEscape相关的功能",
+  "keywords": [
+    "zerolisl_at1",
+    "dateFormat",
+    "escape"
+  ],
+  "license": "ISC"
+}

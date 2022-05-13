@@ -1,4 +1,4 @@
-const itheima = require('./itheima-tools')
+const itheima = require('./zerolisl_at1')
 
 // 格式化时间的功能
 const dtStr = itheima.dateFormat(new Date())
