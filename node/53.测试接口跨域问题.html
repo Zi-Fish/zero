@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
   </head>
   <body>
     <button id="btnGET">GET</button>
@@ -18,7 +18,7 @@
         $('#btnGET').on('click', function () {
           $.ajax({
             type: 'GET',
-            url: 'http://127.0.0.1/api/get',
+            url: 'http://127.0.0.1:8001/api/get',
             data: { name: 'zs', age: 20 },
             success: function (res) {
               console.log(res)
@@ -29,7 +29,7 @@
         $('#btnPOST').on('click', function () {
           $.ajax({
             type: 'POST',
-            url: 'http://127.0.0.1/api/post',
+            url: 'http://127.0.0.1:8001/api/post',
             data: { bookname: '水浒传', author: '施耐庵' },
             success: function (res) {
               console.log(res)
@@ -41,7 +41,7 @@
         $('#btnDelete').on('click', function () {
           $.ajax({
             type: 'DELETE',
-            url: 'http://127.0.0.1/api/delete',
+            url: 'http://127.0.0.1:8001/api/delete',
             success: function (res) {
               console.log(res)
             },
@@ -52,7 +52,7 @@
         $('#btnJSONP').on('click', function () {
           $.ajax({
             type: 'GET',
-            url: 'http://127.0.0.1/api/jsonp',
+            url: 'http://127.0.0.1:8001/api/jsonp',
             dataType: 'jsonp',
             success: function (res) {
               console.log(res)

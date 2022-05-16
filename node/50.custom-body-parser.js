@@ -20,4 +20,4 @@ const bodyParser = (req, res, next) => {
   })
 }
 
-module.exports = bodyParser
+module.exports = bodyParser//向外暴露
