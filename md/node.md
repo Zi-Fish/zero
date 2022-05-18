@@ -1,3 +1,5 @@
+
+
 ####  终端中快捷键
 
 1.tab 能够快速补全路径
@@ -1528,3 +1530,192 @@ app.get('/api/jsonp', (req, res) => {
 })
 ```
 
+#### 在项目中操作数据库
+
+安装mysql模块
+
+```js
+npm i mysql
+```
+
+配置mysql模块
+
+```js
+// 1. 导入 mysql 模块
+const mysql = require('mysql')
+// 2. 建立与 MySQL 数据库的连接关系
+const db = mysql.createPool({
+  host: '127.0.0.1', // 数据库的 IP 地址
+  user: 'root', // 登录数据库的账号
+  password: 'admin123', // 登录数据库的密码
+  database: 'my_db_01', // 指定要操作哪个数据库
+})
+```
+
+检测mysql模块是否可以正常工作
+
+db.query()函数，指定执行的sql语句，通过回调函数拿到执行的结果
+
+```js
+db.query('select 1', (err, results) => {
+  // mysql 模块工作期间报错了
+  if(err) return console.log(err.message)
+  // 能够成功的执行 SQL 语句
+  console.log(results)
+}) 
+```
+
+查询数据
+
+注意：如果执行的是 select 查询语句，则执行的结果是数组
+
+```js
+const sqlStr = 'select * from users'
+db.query(sqlStr, (err, results) => {
+  // 查询数据失败
+  if (err) return console.log(err.message)
+  // 查询数据成功
+  // 注意：如果执行的是 select 查询语句，则执行的结果是数组
+  console.log(results)
+})
+```
+
+插入数据
+
+向 users 表中，新增一条数据，其中 username 的值为 Spider-Man，password 的值为 pcc123
+
+注意：如果执行的是 insert into 插入语句，则 results 是一个对象
+
+id具有唯一性，就算删除了，后添加的对象也不能用
+
+```js
+const user = { username: 'Spider-Man', password: 'pcc123' }
+// 定义待执行的 SQL 语句
+const sqlStr = 'insert into users (username, password) values (?, ?)'
+// 执行 SQL 语句
+db.query(sqlStr, [user.username, user.password], (err, results) => {
+  // 执行 SQL 语句失败了
+  if (err) return console.log(err.message)
+  // 成功了
+  // 注意：如果执行的是 insert into 插入语句，则 results 是一个对象
+  // 可以通过 affectedRows 属性，来判断是否插入数据成功
+  if (results.affectedRows === 1) {
+    console.log('插入数据成功!')
+  }
+})
+```
+
+```js
+ //演示插入数据的便捷方式
+const user = { username: 'Spider-Man2', password: 'pcc4321' }
+// 定义待执行的 SQL 语句
+const sqlStr = 'insert into users set ?'
+// 执行 SQL 语句
+db.query(sqlStr, user, (err, results) => {
+  if (err) return console.log(err.message)
+  if (results.affectedRows === 1) {
+    console.log('插入数据成功')
+  }
+}) 
+```
+
+如何更新用户的信息
+
+```js
+const user = { id: 6, username: 'aaa', password: '000' }
+// 定义 SQL 语句
+const sqlStr = 'update users set username=?, password=? where id=?'
+// 执行 SQL 语句
+db.query(sqlStr, [user.username, user.password, user.id], (err, results) => {
+  if (err) return console.log(err.message)
+  // 注意：执行了 update 语句之后，执行的结果，也是一个对象，可以通过 affectedRows 判断是否更新成功
+  if (results.affectedRows === 1) {
+    console.log('更新成功')
+  }
+})
+```
+
+```js
+演示更新数据的便捷方式
+const user = { id: 6, username: 'aaaa', password: '0000' }
+// 定义 SQL 语句
+const sqlStr = 'update users set ? where id=?'
+// 执行 SQL 语句
+db.query(sqlStr, [user, user.id], (err, results) => {
+  if (err) return console.log(err.message)
+  if (results.affectedRows === 1) {
+    console.log('更新数据成功')
+  }
+})
+```
+
+删除 id 为 5 的用户
+
+```js
+const sqlStr = 'delete from users where id=?'
+db.query(sqlStr, 5, (err, results) => {
+  if (err) return console.log(err.message)
+  // 注意：执行 delete 语句之后，结果也是一个对象，也会包含 affectedRows 属性
+  if (results.affectedRows === 1) {
+    console.log('删除数据成功')
+  }
+})
+```
+
+标记删除
+
+防止用户把数据删没了，加一个标记
+
+```js
+const sqlStr = 'update users set status=? where id=?'
+db.query(sqlStr, [1, 6], (err, results) => {
+  if (err) return console.log(err.message)
+  if (results.affectedRows === 1) {
+    console.log('标记删除成功')
+  }
+})
+```
+
+#### web开发模式
+
+1.基于服务端渲染的渲染的传统开发模式
+
+​	服务器发送给客户端的html页面，是在服务器通过字符串拼接，动态生成的。因此客户端不需要使用ajax这样的技术额外请求页面的数据。
+
+优点：前端耗时少，有利于seo
+
+缺点：占用服务器资源，不利于前后端分离
+
+2.基于前后端分离的新型的web开发模式
+
+​	后端提供api接口，前端使用ajax调用接口，减轻了服务器端的渲染压力
+
+​	根据需求，选择开发模式
+
+身份认证
+
+为了确认当前所声称的某种身份的用户，确实是所声称的用户
+
+服务器渲染：session认证机制
+
+前后端分离：jwt认证机制
+
+#### session认证机制
+
+http协议的无状态性，指的是客户端的每次http请求都是独立的，连续多个请求之间没有直接的关系，服务器不会主动保留每次http请求的状态。
+
+​	Cookie 是存储在用户浏览器中的一段不超过 4 KB 的字符串。它由一个名称（Name）、一个值（Value）和其它几个用于控制 Cookie 有效期、安全性、使用范围的可选属性组成。
+​	不同域名下的 Cookie 各自独立，每当客户端发起请求时，会自动把当前域名下所有未过期的 Cookie 一同发送到服务器。
+Cookie的几大特性：不具有安全性
+① 自动发送
+② 域名独立
+③ 过期时限
+④ 4KB 限制
+
+​	客户端第一次请求服务器的时候，服务器通过响应头的形式，向客户端发送一个身份认证的 Cookie，客户端会自动将 Cookie 保存在浏览器中。
+​	随后，当客户端浏览器每次请求服务器的时候，浏览器会自动将身份认证相关的 Cookie，通过请求头的形式发送给
+![image-20220518205438658](C:\Users\李寒曦\AppData\Roaming\Typora\typora-user-images\image-20220518205438658.png)
+
+session工作原理
+
+![image-20220518210038901](C:\Users\李寒曦\AppData\Roaming\Typora\typora-user-images\image-20220518210038901.png)
