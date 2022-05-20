@@ -2,6 +2,7 @@ const express=require('express')
 const app=express()
 
 const cors=require('cors')
+const joi=require('joi')
 app.use(cors())
 
 app.use(express.urlencoded({ extended: false }))
@@ -20,9 +21,25 @@ app.use(function (req, res, next) {
   next()
 })
 
+// 解析 token 的中间件
+const expressJWT = require('express-jwt')
+const config = require('./config')
+// 使用 .unless({ path: [/^\/api\//] }) 指定哪些接口不需要进行 Token 的身份认证
+app.use(expressJWT({ secret: config.jwtSecretKey }).unless({ path: [/^\/api\//] }))
 
+//导入并使用用户路由模块
 const userRouter=require('./router/user')
-app.use('/api',userRouter)
+// const res = require('express/lib/response')
+app.use('/api',userRouter);
+//导入并使用用户信息的路由模块
+const userinfoRouter=require('./router/userinfo')
+app.use('/my',userRouter)
+
+app.use((err, req, res, next)=>{
+  if(err instanceof joi.ValidationError) return res.cc(err)
+  if (err.name === 'UnauthorizedError') return res.cc('身份认证失败！')
+  res.cc(err)
+})
 
 app.listen(8001,()=>{
   console.log('api server running at http://127.0.01:8001')

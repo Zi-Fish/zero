@@ -1,14 +1,16 @@
-//const status = require('express/lib/response')
-//const results = require('mysql/lib/protocol/constants/client')
 const db = require('../db/index')
 const bcrypt=require('bcryptjs')
+//导入生成token的包
+const jwt=require('jsonwebtoken')
+const { config } = require('../db/index')
+const { jwtSecretKey } = require('../config')
 
 exports.regUser=(req,res)=>{
   const userinfo=req.body
-if(!userinfo.username||!userinfo.password){
-  // return res.send({status:1,message:'用户名或密码不合法'})
-  return res.cc('用户名或密码不合法')
-}
+// if(!userinfo.username||!userinfo.password){
+//   // return res.send({status:1,message:'用户名或密码不合法'})
+//   return res.cc('用户名或密码不合法')
+// }
 const sqlStr='select * from ev_users where username=?'
 db.query(sqlStr,userinfo.username,(err,results)=>{
   if(err){
@@ -38,5 +40,23 @@ db.query(sqlStr,userinfo.username,(err,results)=>{
 }
 
 exports.login=(req,res)=>{
-  res.send('login OK')
+  const userinfo=req.body
+  const sql='select * from ev_users where username=?'
+  db.query(sql,userinfo.username,(err,results)=>{
+    if(err) return res.cc(err)
+    if(results.length!==1) return res.cc('登陆失败')
+    const compareResult=bcrypt.compareSync(userinfo.password,results[0].password)
+    if(!compareResult) return res.cc('密码错误，登陆失败')
+    // res.send('login OK')
+    //token剔除密码和头像
+    const user={...results[0],password:'',user_pic:''}
+    // console.log(user)
+    const tokenStr=jwt.sign(user,config,jwtSecretKey,{expiresIn:config.expiresIn})
+    res.send({
+      status:0,
+      message:'登陆成功',
+      token:'Bearer '+tokenStr
+    })
+  })
+  
 }
