@@ -41,7 +41,7 @@ db.query(sqlStr,userinfo.username,(err,results)=>{
 
 exports.login=(req,res)=>{
   const userinfo=req.body
-  const sql='select * from ev_users where username=?'
+  const sql=`select * from ev_users where username=?`
   db.query(sql,userinfo.username,(err,results)=>{
     if(err) return res.cc(err)
     if(results.length!==1) return res.cc('登陆失败')
