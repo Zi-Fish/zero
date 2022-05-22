@@ -1,3 +1,4 @@
+//入口文件
 const express=require('express')
 const app=express()
 
@@ -6,7 +7,7 @@ const joi=require('joi')
 app.use(cors())
 
 app.use(express.urlencoded({ extended: false }))
-
+app.use('/uploads',express.static('./uploads'))
 // 响应数据的中间件
 app.use(function (req, res, next) {
   // status = 0 为成功； status = 1 为失败； 默认将 status 的值设置为 1，方便处理失败的情况
@@ -33,7 +34,13 @@ const userRouter=require('./router/user')
 app.use('/api',userRouter);
 //导入并使用用户信息的路由模块
 const userinfoRouter=require('./router/userinfo')
-app.use('/my',userRouter)
+app.use('/my',userinfoRouter)
+//导入使用文章分类的路由模块
+const artCateRouter=require('./router/artcate')
+app.use('/my/article',artCateRouter)
+//导入并使用文章的路由模块
+const articleRouter=require('./router/article')
+app.use('/my/article',articleRouter)
 
 app.use((err, req, res, next)=>{
   if(err instanceof joi.ValidationError) return res.cc(err)
