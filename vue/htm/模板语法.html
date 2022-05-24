@@ -28,10 +28,11 @@
         <h3>你好，{{name}}</h3>
         <hr/>
         <h1>指令语法</h1>
-        <!-- v-bind可以给任何标签的的属性动态的绑定值 -->
-        <a v-bind:href="school.url.toUpperCase()" x="hello">点我去{{school.name}}学习1</a>
+        <!-- v-bind可以给任何标签的的属性动态的绑定值，把引号里面的东西当作js表达式执行 -->
+        <a v-bind:href="school.url" x="hello">点我去{{school.name}}学习1</a>
         <!-- ：简写 -->
         <a :href="school.url" x="hello">点我去{{school.name}}学习2</a>
+        <a href="school.url" x="hello">点我去{{school.name}}学习3</a>
     </div>
 </body>
 
@@ -42,6 +43,7 @@
         el: '#root',
         data: {
             name: 'jack',
+            // url:'http://www.atguigu.com',
             school: {
                 name: '尚硅谷',
                 url: 'http://www.atguigu.com',
