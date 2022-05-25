@@ -19,7 +19,8 @@
         <!-- 遍历数组 -->
         <h2>人员列表（遍历数组）</h2>
         <ul>
-            <li v-for="(p,index) of persons" :key="index">
+            <li v-for="(p,index) of persons" :key="p.id">
+            <!-- <li v-for="(p,index) of persons" :key="index"> -->
                 <!-- key相当于人的身份证号 -->
                 {{p.name}}-{{p.age}}
             </li>

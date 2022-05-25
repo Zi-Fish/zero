@@ -34,6 +34,7 @@
     <!-- 准备好一个容器-->
     <div id="root">
         <h2>欢迎来到{{name}}学习</h2>
+        <input type="text" placeholder="ctrl+y" @keyup.ctrl.y="showInfo">
         <input type="text" placeholder="按下回车提示输入" @keydown.huiche="showInfo">
     </div>
 </body>
@@ -49,6 +50,7 @@
         },
         methods: {
             showInfo(e) {
+                //keycode按键编码
                 // console.log(e.key,e.keyCode)
                 console.log(e.target.value)
             }

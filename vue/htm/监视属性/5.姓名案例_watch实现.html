@@ -37,6 +37,7 @@
         },
         watch: {
             firstName(val) {
+                //写成箭头函数，setTIMEout由js管理
                 setTimeout(() => {
                     console.log(this)
                     this.fullName = val + '-' + this.lastName
