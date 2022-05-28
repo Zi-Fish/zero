@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>分析生命周期</title>
+		<!-- 引入Vue -->
+		<script type="text/javascript" src="../js/vue.js"></script>
+	</head>
+	<body>
+		<!-- 准备好一个容器-->
+		<div id="root" :x="n">
+			<h2 v-text="n"></h2>
+			<h2>当前的n值是：{{n}}</h2>
+			<button @click="add">点我n+1</button>
+			<button @click="bye">点我销毁vm</button>
+		</div>
+	</body>
+
+	<script type="text/javascript">
+		Vue.config.productionTip = false //阻止 vue 在启动时生成生产提示。
+
+		new Vue({
+			el:'#root',
+			// template:`
+			// 	<div>
+			// 		<h2>当前的n值是：{{n}}</h2>
+			// 		<button @click="add">点我n+1</button>
+			// 	</div>
+			// `,
+			data:{
+				n:1
+			},
+			methods: {
+				add(){
+					console.log('add')
+					this.n++
+				},
+				bye(){
+					console.log('bye')
+					this.$destroy()
+					//只剩原生dom事件
+				}
+			},
+			watch:{
+				n(){
+					console.log('n变了')
+				}
+			},
+			//此时无法通过vm访问到data里的数据，method里面的方法
+			beforeCreate() {
+				console.log('beforeCreate')
+			},
+			//此时可以通过vm访问到data里的数据，method里面的方法
+			created() {
+				console.log('created')
+			},
+			//此时，页面呈现的是未经vue编译的dom结构
+			//所有对dom的操作都不奏效
+			beforeMount() {
+				console.log('beforeMount')
+			},
+			//******此时，页面呈现的是经过vue编译的dom结构
+			//******对dom的操作都奏效（尽可能避免），初始化过程结束
+			mounted() {
+				console.log('mounted')
+			},
+			//此时数据是新的，但页面依旧是旧的，页面尚未和数据保持同步
+			beforeUpdate() {
+				console.log('beforeUpdate')
+			},
+			//此时数据是新的，页面是新的，页面和数据保持同步
+			updated() {
+				console.log('updated')
+			},
+			//******此时vm所有指令都处于可用状态。马上执行销毁过程，一般在此阶段，关闭定时器，取消订阅消息，接触自定义事件等收尾操作，工作成果还在，但缺少管理，组件实例对象
+			beforeDestroy() {
+				console.log('beforeDestroy')
+			},
+			destroyed() {
+				console.log('destroyed')
+			},
+		})
+	</script>
+</html>
