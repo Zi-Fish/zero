@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: aqua;
+    }
+  </style>
+  <script src="jQuery.min.js"></script>
+</head>
+
+<body>
+  <div></div>
+  <script>
+    // $(function () {
+    //   //属性名一定要加引号，属性值若是数字，不加引号
+    //   console.log(("div").css("width"));
+    //   //1.参数只写属性名，则是返回原来的属性值
+    //   //2.以对象形式修改，则不用加引号
+    //   $("div").css({
+    //     width: 400,
+    //     height: 200,
+    //     backgroundColor: "red"
+    //   })
+    // }) // 操作样式之css方法
+        $(function() {
+            console.log($("div").css("width"));
+            // $("div").css("width", "300px");
+            // $("div").css("width", 300);
+            // $("div").css(height, "300px"); 属性名一定要加引号
+            $("div").css({
+                width: 400,
+                height: 400,
+                backgroundColor: "red"
+                    // 如果是复合属性则必须采取驼峰命名法，如果值不是数字，则需要加引号
+            })
+        })
+  </script>
+</body>
+
+</html>

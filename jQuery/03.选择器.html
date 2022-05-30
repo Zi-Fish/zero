@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="jquery.min.js"></script>
+</head>
+
+<body>
+  <!-- 选择器和css完全一致，只是需要做$("") 封装 -->
+  <div>我是div</div>
+  <div class="nav">我是nav div</div>
+  <p>我是p</p>
+  <ol>
+    <li>我是ol 的</li>
+    <li>我是ol 的</li>
+    <li>我是ol 的</li>
+    <li>我是ol 的</li>
+  </ol>
+  <ul>
+    <li>我是ul 的</li>
+    <li>我是ul 的</li>
+    <li>我是ul 的</li>
+    <li>我是ul 的</li>
+  </ul>
+  <div>惊喜吧</div>
+  <div>惊喜吧</div>
+  <div>惊喜吧</div>
+  <div>惊喜吧</div>
+  <ul>
+    <li>相同的操作</li>
+    <li>相同的操作</li>
+    <li>相同的操作</li>
+  </ul>
+  <script>
+    $(function () {
+      console.log($(".nav"));
+      console.log($("ul li"));
+
+    })
+    // 1. 获取四个div元素 
+    console.log($("div"));
+    // 设置样式
+    // $('div').css('属性','值')
+    // 2. 给四个div设置背景颜色为粉色 jquery对象不能使用style
+    $("div").css("background", "aqua");
+    // 3. 隐式迭代就是把匹配的所有元素内部进行遍历循环，给每一个元素添加css这个方法
+    $("ul li").css("color", "red");
+  </script>
+</body>
+
+</html>

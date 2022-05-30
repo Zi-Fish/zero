@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="jQuery.min.js"></script>
+</head>
+
+<body>
+  123<br>
+  <button>123</button>
+  <button>123</button>
+  <button>123</button>
+  <button>123</button>
+  <button>123</button>
+  <button>123</button>
+  <button>123</button>
+  <button>123</button>
+  <script>
+    $(function(){
+      //隐式迭代 给所有按钮都绑定了点击事件
+      $("button").click(function(){
+        // $(this).css("color","red")
+        // $(this).siblings.css("color","")
+        //链式编程 一层一层往下找
+        // $(this).css("color","red").siblings().css("color","")
+        // $(this).siblings().css("color","blue")
+        //兄弟变，自身不变
+ $(this).siblings().parent().css("color","blue")
+        })
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="yeye">
+        <div class="father">
+            <div class="son">儿子</div>
+        </div>
+    </div>
+
+    <div class="nav">
+        <p>我是屁</p>
+        <div>
+            <p>我是p</p>
+        </div>
+    </div>
+    <ol>
+    <li>我是ol的li</li>
+    <li>我是ol的li</li>
+    <li class="item">我是ol的li</li>
+    <li>我是ol的li</li>
+    <li>我是ol的li</li>
+    <li>我是ol的li</li>
+  </ol>
+  <ul>
+    <li>我是ul的</li>
+    <li>我是ul的</li>
+    <li>我是ul的</li>
+    <li>我是ul的</li>
+    <li>我是ul的</li>
+    <li>我是ul的</li>
+  </ul>
+  <div class="current"> current</div>
+  <div>没有current</div>
+    <script>
+      $(function(){
+        //1.父 parent() 返回最近的一级父元素 
+        console.log($(".son").parent())
+        //2.子 children() 最近一级子元素
+        // $(".nav").children("p").css("color","blue")
+        //3. 所有后代元素 find()
+        $(".nav").find("p").css("color","red")
+        //4.兄弟元素 siblings() 除自己之外的兄弟元素
+        $("ol .item").siblings("li").css("color","red")
+        //5.nextAll() 当前元素之后的所有兄弟元素
+        //6.prevtAll() 当前元素之前的所有兄弟元素
+        //7.判断是否有某个类名 hasClass() 
+        console.log($("div:first").hasClass("current"))
+        //8.第n个元素 eq()
+        // 2. 第n个元素
+        var index = 2;
+            // (1) 我们可以利用选择器的方式选择
+            // $("ul li:eq(2)").css("color", "blue");
+            // $("ul li:eq("+index+")").css("color", "blue");
+            // (2) 我们可以利用选择方法的方式选择 更推荐这种写法
+            // $("ul li").eq(2).css("color", "blue");
+            $("ul li").eq(index).css("color", "blue");
+      })
+      //
+    </script>
+</body>
+</html>

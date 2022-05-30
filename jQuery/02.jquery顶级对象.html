@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="jQuery.min.js"></script>
+  <style>
+    div{
+      width: 200px;
+      height: 200px;
+      background-color: palegreen;
+    }
+  </style>
+</head>
+<body>
+  <span></span>
+  <div></div>
+  <script>
+    //1.$ 是jQuery的别称
+    // $(function(){
+    //   alert(11)
+    // })
+    var myd=document.querySelector('div');//dom对象
+    console.log(myd)
+    $('div')
+    console.log($('div'))
+jQuery(function(){
+  // alert(11)
+  $('div').hide()
+})
+    //2.$ 也是jquery的顶级对象
+    // dom对象就是原生js获取过来的对象
+    //jQuery对象，用jQuery方式获取过来的对象,伪数组方式存储
+    //jQuery对象只能使用jQuery方法，dom对象则使用原生地的js属性和方法
+    // =================================
+    //原生的一些属性和方法jQuery没有做封装，使用时则需要把jQuery对象转换为dom对象
+    // dom转换为jQuery对象
+// 直接获取
+    $('span')
+// 已经用元素js获取的dom对象
+var span1=document.querySelector('span')
+$(span1)
+// jQuery对象转换为dom对象
+// $('video')[0].play
+// $('video').get[0].play
+// 索引号
+  </script>
+</body>
+</html>
