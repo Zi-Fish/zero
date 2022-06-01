@@ -78,7 +78,7 @@ $(function () {
     });
     // =============================================
     // =============================================
-    //  4. 用户修改文本框的值 计算 小计模块  
+    //  4. 用户修改文本框的值 计算 小计模块 change事件 
     $(".itxt").change(function () {
         // 先得到文本框的里面的值 乘以 当前商品的单价 
         var n = $(this).val();
@@ -102,6 +102,7 @@ $(function () {
         });
         $(".amount-sum em").text(count);
         $(".p-sum").each(function (i, ele) {
+            // substr 去掉符号
             money += parseFloat($(ele).text().substr(1));
         });
         $(".price-sum em").text("￥" + money.toFixed(2));
