@@ -9,30 +9,30 @@ $(function() {
                 alert("请输入您要的操作");
             } else {
                 // 先读取本地存储原来的数据
-                var local = getDate();
+                var local =getData();
                 // console.log(local);
-                // 把local数组进行更新数据 把最新的数据追加给local数组
+                // 把local数组进行更新数据 把最新的数据追加给local数组 push
                 local.push({ title: $(this).val(), done: false });
                 // 把这个数组local 存储给本地存储
-                saveDate(local);
+                saveData(local);
                 // 2. toDoList 本地存储数据渲染加载到页面
                 load();
                 $(this).val("");
             }
         }
     });
-    // 3. toDoList 删除操作
+    // 3. toDoList 删除操作 删除的是本地存储，不是li
     $("ol, ul").on("click", "a", function() {
         // alert(11);
         // 先获取本地存储
-        var data = getDate();
+        var data =getData();
         console.log(data);
         // 修改数据
         var index = $(this).attr("id");
         console.log(index);
         data.splice(index, 1);
         // 保存到本地存储 刷新页面不会消失
-        saveDate(data);
+        saveData(data);
         // 重新渲染页面
         load();
     });
@@ -40,7 +40,7 @@ $(function() {
     $("ol, ul").on("click", "input", function() {
         // alert(11);
         // 先获取本地存储的数据
-        var data = getDate();
+        var data =getData();
         // 修改数据
         var index = $(this).siblings("a").attr("id");
         console.log(index);
@@ -49,12 +49,12 @@ $(function() {
         console.log(data);
 
         // 保存到本地存储
-        saveDate(data);
+        saveData(data);
         // 重新渲染页面
         load();
     });
     // 读取本地存储的数据 
-    function getDate() {
+    function getData() {
         var data = localStorage.getItem("todolist");
         if (data !== null) {
             // 本地存储里面的数据是字符串格式的 但是我们需要的是对象格式的
@@ -64,13 +64,13 @@ $(function() {
         }
     }
     // 保存本地存储数据
-    function saveDate(data) {
+    function saveData(data) {
         localStorage.setItem("todolist", JSON.stringify(data));
     }
     // 渲染加载数据
     function load() {
         // 读取本地存储的数据
-        var data = getDate();
+        var data =getData();
         console.log(data);
         // 遍历之前先要清空ol里面的元素内容
         $("ol, ul").empty();
@@ -81,7 +81,7 @@ $(function() {
             // console.log(n);
             if (n.done) {
                 $("ul").prepend("<li><input type='checkbox' checked='checked' > <p>" + n.title + "</p> <a href='javascript:;' id=" + i + " ></a></li>");
-                doneCount++;
+                doneCount++;  
             } else {
                 $("ol").prepend("<li><input type='checkbox' > <p>" + n.title + "</p> <a href='javascript:;' id=" + i + " ></a></li>");
                 todoCount++;
