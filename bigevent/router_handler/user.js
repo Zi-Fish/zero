@@ -50,6 +50,8 @@ exports.regUser = (req, res) => {
 
 // 登录的处理函数
 exports.login = (req, res) => {
+  res.end("fdsfsl")
+  console.log("sdlfs");
   // 接收表单的数据
   const userinfo = req.body
   // 定义 SQL 语句
