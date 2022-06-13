@@ -11,6 +11,5 @@ router.get('/user/list', (req, res) => {
 router.post('/user/add', (req, res) => {
   res.send('Add new user.')
 })
-
 // 4. 向外导出路由对象
 module.exports = router
