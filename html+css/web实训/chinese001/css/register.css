@@ -1,0 +1,126 @@
+/* body{
+  background-image: url(../images/bg.webp) no-repeat;
+} */
+
+header {
+  height: 84px;
+  border-bottom: 2px solid #c06f98;
+}
+.registerarea {
+  margin: 0 auto;
+  width: 1200px;
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+  background-repeat: repeat;
+  background-size: 100%;
+  height: 522px;
+  border: 1px solid #ececec;
+  border-bottom: 2px solid #c06f98 ;
+  /* margin-top: 20px; */
+}
+
+.registerarea h3 {
+  height: 42px;
+  border-bottom: 2px solid #000;
+  background-color: #c06f98;
+  font-size: 18px;
+  line-height: 42px;
+  padding: 0 10px;
+  font-weight: normal;
+}
+
+.login {
+  float: right;
+  font-size: 14px;
+}
+
+.reg_form {
+  width: 600px;
+  /* background-color: aquamarine; */
+  margin: 50px auto 0;
+}
+
+.reg_form ul li {
+  margin-bottom: 20px;
+}
+
+.reg_form ul li label {
+  display: inline-block;
+  width: 88px;
+  text-align: right;
+}
+
+.reg_form ul li input {
+  width: 242px;
+  height: 37px;
+  border: 1px solid #ccc;
+}
+
+.error {
+  color: red;
+}
+
+.error_icon {
+  display: inline-block;
+  vertical-align: middle;
+  /* 垂直居中 */
+  width: 20px;
+  height: 20px;
+  background: url(../images/error.png) no-repeat;
+  margin-top: -2px;
+}
+
+.success {
+  color: green;
+}
+
+.success_icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  background: url(../images/success.png) no-repeat;
+}
+
+.safe {
+  padding-left: 160px;
+}
+
+.safe em {
+  padding: 0 12px;
+  color: #fff;
+}
+
+.r {
+  background-color: #de1111;
+}
+
+.z {
+  background-color: #40b83f;
+}
+
+.q {
+  background-color: #f79011;
+}
+
+.agree {
+  vertical-align: middle;
+  margin: 0px 0px 0px 90px;
+}
+
+#cb {
+  width: 14px;
+  vertical-align: middle;
+}
+
+.agree a {
+  color: aqua;
+}
+
+.btn {
+  width: 200px;
+  height: 34px;
+  background-color: #c81623;
+  font-size: 14px;
+  color: #fff;
+  margin: 30px 0 0 70px;
+}

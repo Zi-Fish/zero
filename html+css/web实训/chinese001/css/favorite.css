@@ -1,0 +1,278 @@
+
+body{
+  background-image: url(../images/bg.webp);
+  background-repeat: repeat-y repeat-x;
+  background-size: 100%;
+  width: 100%;
+  height: 100%;
+  color: #000;
+}
+.w{
+  position: relative;
+  margin: 0 auto;
+  width: 1200px;
+  background-color: #8076a3;
+}
+h3 {
+  text-align: center;
+}
+p{
+  text-indent: 2em;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: large;
+  color: #000;
+}
+.xingqiu {
+  /* 100%窗口高度 */
+  height: 100vh;
+  /* height: 430px;
+  width: 430px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: blue;
+  text-align: center;
+  background-color: #000;
+  /* 自定义属性，--s为太阳的颜色，--e为地球的颜色，--m为月球的颜色，--st为星星的颜色 可通过var函数对其调用 */
+  --s: #f39c12;
+  --e: #3498db;
+  --m: #1abc9c;
+  --st: #8076a3;
+}
+
+.sun {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: var(--s);
+  box-shadow: 0 0 10px var(--s),
+    0 0 20px var(--s),
+    0 0 30px var(--s),
+    0 0 40px var(--s);
+  animation: rotate 36.5s linear infinite;
+}
+
+.sun::after {
+  content: "";
+  width: 330px;
+  height: 330px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #fff;
+  border-radius: 50%;
+  /* z-index: -1; */
+}
+.sun::before {
+  content: "";
+  width: 169px;
+  height: 169px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #fff;
+  border-radius: 50%;
+  /* z-index: -2; */
+}
+
+.earth {
+  position: absolute;
+  left: 200px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--e);
+  box-shadow: 0 0 10px var(--e),
+    0 0 20px var(--e),
+    0 0 30px var(--e),
+    0 0 40px var(--e);
+  animation: rotate 3s linear infinite;
+}
+
+.earth::after {
+  content: "";
+  width: 107px;
+  height: 107px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgb(226, 25, 35);
+  border-radius: 50%;
+}
+.star {
+  position: absolute;
+  left: 125px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: var(--st);
+  box-shadow: 0 0 10px var(--st),
+    0 0 15px var(--st),
+    0 0 25px var(--st),
+    0 0 35px var(--st);
+  animation: rotate 5s linear infinite;
+}
+
+
+.moon {
+  position: absolute;
+  left: 50px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--m);
+  box-shadow: 0 0 5px var(--m),
+    0 0 10px var(--m),
+    0 0 20px var(--m);
+}
+
+/* 定义动画 */
+@keyframes rotate {
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+.container{
+  position: absolute;
+  margin: 0 auto;
+  top: 200px;
+  left: 200px;
+  width: 1000px;
+  height: 100vh;
+  background: url("./images/space.jpg") no-repeat;
+  /* 把背景图像扩展至足够大，以使背景图像完全覆盖背景区域 */
+  background-size: cover;
+  background-position-x: center;
+  /* 执行动画：动画名称 时长 线性的 无限次播放 */
+  animation: animateBg 5s linear infinite;
+}
+span{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background-color: #fff;
+  border-radius: 50%;
+  /* 发光效果 */
+  box-shadow: 0 0 0 4px rgba(255,255,255,0.1),
+  0 0 0 8px rgba(255,255,255,0.1),
+  0 0 20px rgba(255,255,255,1);
+
+  animation: animate 3s linear infinite;
+}
+/* 拖尾效果 */
+span::before{
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 300px;
+  height: 3px;
+  background: linear-gradient(90deg,#5cb3cc,transparent);
+}
+/* 分别设置 */
+span:nth-child(1){
+  top: 0;
+  right: 0;
+  left: initial;
+  /* 动画延迟时间 */
+  animation-delay: 0s;
+  /* 动画时长 */
+  animation-duration: 1s;
+}
+span:nth-child(2){
+  top: 0;
+  right: 80px;
+  left: initial;
+  animation-delay: 0.2s;
+  animation-duration: 3s;
+}
+span:nth-child(3){
+  top: 80px;
+  right: 0;
+  left: initial;
+  animation-delay: 0.4s;
+  animation-duration: 2s;
+}
+span:nth-child(4){
+  top: 0;
+  right: 180px;
+  left: initial;
+  animation-delay: 0.6s;
+  animation-duration: 1.5s;
+}
+span:nth-child(5){
+  top: 0;
+  right: 400px;
+  left: initial;
+  animation-delay: 0.8s;
+  animation-duration: 2.5s;
+}
+span:nth-child(6){
+  top: 0;
+  right: 600px;
+  left: initial;
+  animation-delay: 1s;
+  animation-duration: 3s;
+}
+span:nth-child(7){
+  top: 300px;
+  right: 0;
+  left: initial;
+  animation-delay: 1.2s;
+  animation-duration: 1.75s;
+}
+span:nth-child(8){
+  top: 0;
+  right: 700px;
+  left: initial;
+  animation-delay: 1.4s;
+  animation-duration: 1.25s;
+}
+span:nth-child(9){
+  top: 0;
+  right: 1000px;
+  left: initial;
+  animation-delay: 0.75s;
+  animation-duration: 2.25s;
+}
+span:nth-child(10){
+  top: 0;
+  right: 450px;
+  left: initial;
+  animation-delay: 2.75s;
+  animation-duration: 2.25s;
+}
+
+/* 背景缩放动画 */
+@keyframes animateBg {
+  0%,100%{
+      transform: scale(1);
+  }
+  50%{
+      transform: scale(1.2);
+  }
+}
+/* 流星划过动画 */
+@keyframes animate {
+  0%{
+      transform: rotate(315deg) translateX(0);
+      opacity: 1;
+  }
+  90%{
+      opacity: 1;
+  }
+  100%{
+      transform: rotate(315deg) translateX(-1000px);
+      opacity: 0;
+  }
+}
+.starss img{
+  margin: 0 auto;
+  width: 1200px;
+}

@@ -1,0 +1,146 @@
+body{
+  background-image: url(../images/header.webp) ;
+  background-size: 100%;
+}
+.shortcut {
+  background-color: #ccffff;
+}
+
+.main {
+  width: 990px;
+  height: 455px;
+  background-color: #fff;
+  margin-left: 210px;
+  margin-top: 10px;
+}
+
+.focus {
+  position: relative;
+  float: left;
+  width: 740px;
+  height: 455px;
+  background-color: blanchedalmond;
+  overflow: hidden;
+}
+
+.focus ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 600%;
+}
+
+.focus ul li {
+  float: left;
+}
+
+.arrow-l,
+.arrow-r {
+  display: none;
+  position: absolute;
+  top: 50%;
+  margin-top: -20px;
+  width: 24px;
+  height: 40px;
+  background: rgba(0, 0, 0, .3);
+  text-align: center;
+  line-height: 40px;
+  color: #fff;
+  font-family: 'icomoon';
+  font-size: 18px;
+  z-index: 2;
+}
+
+.arrow-l {
+  left: 0;
+}
+
+.arrow-r {
+  right: 0;
+}
+
+.circle {
+  position: absolute;
+  bottom: 10px;
+  left: 50px;
+}
+
+.circle li {
+  float: left;
+  width: 8px;
+  height: 8px;
+  /*background-color: #fff;*/
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  margin: 0 3px;
+  border-radius: 50%;
+  /*鼠标经过显示小手*/
+  cursor: pointer;
+}
+
+.current {
+  background-color: #fff;
+}
+
+.news {
+  position: relative;
+  width: 250px;
+  height: 455px;
+  float: right;
+  overflow: hidden;
+  color: black;
+  background-color: #5cb3cc;
+}
+
+.news .more {
+  float: right;
+}
+
+.news .news_mi {
+  font-size: medium;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  height: 255px;
+  overflow-y: scroll;
+}
+
+.news .news_end {
+  height: 200px;
+}
+
+.texta {
+  margin: 0 auto;
+  background-color: #cccc85;
+}
+
+.texta .thead {
+  height: 50px;
+  background: #ccccff;
+  text-align: center;
+  line-height: 50px;
+  /* text-decoration: dotted; */
+}
+
+.texta .area>p {
+  color: black;
+  font-family: "Micsoft YaHei";
+  font-size: medium;
+  text-indent: 2em;
+}
+
+.texta .area p:nth-child(even) {
+  background-color: #cccc85;
+}
+
+.texta .area p:nth-child(odd) {
+  background-color: #5cb3cc;
+}
+.texta .area li{
+  height: 20px;
+  line-height: 20px;
+  color: aqua;
+  font-family: 'Courier New', Courier, monospace;
+}
+.area p img{
+  margin: 0 auto ;
+  height: 200px;
+  width: 300px;
+}
