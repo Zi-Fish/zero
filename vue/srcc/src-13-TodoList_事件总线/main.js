@@ -10,7 +10,6 @@ new Vue({
 	el:'#app',
 	render: h => h(App),
 	beforeCreate() {
-		// 最开头的生命周期
-		Vue.prototype.$bus = this //安装全局事件总线
+		Vue.prototype.$bus = this
 	},
 })
