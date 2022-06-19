@@ -20,6 +20,7 @@
 				console.log('我是School组件，收到了数据',data)
 			})
 		},
+		
 		beforeDestroy() {
 			this.$bus.$off('hello')
 		},
