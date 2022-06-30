@@ -3,7 +3,6 @@
     <h1>当前求和为：{{ sum }}</h1>
     <h3>当前求和放大十倍为：{{ bigSum }}</h3>
     <h3>我是{{ name }},是{{ sex }}的</h3>
-    <h3 style="color:red">下方组件总人数：{{personList.length}}</h3>
     <!-- 强制转换为数字类型 -->
     <select name="" id="" v-model.number="n">
       <!-- <select name="" id="" v-model="n"> -->
@@ -29,17 +28,46 @@ export default {
     };
   },
   computed: {
+    //   he(){
+    //     return this.$store.state.sum
+    //   },
+    // mingzi(){
+    //     return this.$store.state.name
+    //   },
+    // xingbie(){
+    //     return this.$store.state.sex
+    //   },
+
+    // 对象写法 借助mapState生成计算属性，从state中读取数据。
+    // ...mapState({ sum: "sum", name: "name", sex "sex" }),
 
     //数组写法 注意名字需一致才能使用
-    ...mapState(["sum", "name", "sex",'personList']),
-
+    ...mapState(["sum", "name", "sex"]),
+    // bigSum() {
+    //   return this.$store.getters.bigSum;
+    // },
     ...mapGetters(["bigSum"]),
   },
 
   methods: {
-   
-    ...mapMutations({ increment: "JIA", decrement: "JIAN" }),
+    // increment() {
+    //   this.$store.commit("JIA", this.n);
+    // },
+    // decrement() {
+    //   this.$store.commit("JIAN", this.n);
+    // },
 
+    // 借助mapMutations生成对应的方法，方法中会调用commit去联系mutations
+    ...mapMutations({ increment: "JIA", decrement: "JIAN" }),
+    // 数组写法，名字应与mutations的一致s
+    // ...mapMutations(['JIA','JIAN']),
+    // ==================================================
+  //   odd() {  
+  //       this.$store.dispatch("jiaOdd", this.n);
+  //   },
+  //   wait() {
+  //       this.$store.dispatch("jiaWait", this.n);
+  // },
 ...mapActions({odd:'jiaOdd',wait:'jiaWait'}),
 // 数组写法同类型
   mounted() {

@@ -39,7 +39,15 @@ export default {
   methods: {
    
     ...mapMutations({ increment: "JIA", decrement: "JIAN" }),
-
+    // 数组写法，名字应与mutations的一致s
+    // ...mapMutations(['JIA','JIAN']),
+    // ==================================================
+  //   odd() {  
+  //       this.$store.dispatch("jiaOdd", this.n);
+  //   },
+  //   wait() {
+  //       this.$store.dispatch("jiaWait", this.n);
+  // },
 ...mapActions({odd:'jiaOdd',wait:'jiaWait'}),
 // 数组写法同类型
   mounted() {
