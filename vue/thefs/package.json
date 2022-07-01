@@ -15,6 +15,7 @@
     "pubsub-js": "^1.9.4",
     "vue": "^2.6.14",
     "vue-resource": "^1.5.3",
+    "vue-router": "^3.5.4",
     "vuex": "^3.6.2"
   },
   "devDependencies": {
@@ -45,5 +46,10 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "description": "├── node_modules \r \t├── public\r \t│   ├── favicon.ico: 页签图标\r \t│   └── index.html: 主页面\r \t├── src\r \t│   ├── assets: 存放静态资源\r \t│   │   └── logo.png\r \t│   │── component: 存放组件\r \t│   │   └── HelloWorld.vue\r \t│   │── App.vue: 汇总所有组件\r \t│   │── main.js: 入口文件\r \t├── .gitignore: git版本管制忽略的配置\r \t├── babel.config.js: babel的配置文件\r \t├── package.json: 应用包配置文件 \r \t├── README.md: 应用描述文件\r \t├── package-lock.json：包版本控制文件",
+  "main": "babel.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
