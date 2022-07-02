@@ -4,11 +4,10 @@
 		<div>
 			<ul class="nav nav-tabs">
 				<li>
-					<!-- replace 缓存开启一个销毁一个，没有前进和后退 -->
-					<router-link replace class="list-group-item" active-class="active" to="/home/news">News</router-link>
+					<router-link class="list-group-item" active-class="active" to="/home/news">News</router-link>
 				</li>
 				<li>
-					<router-link replace class="list-group-item" active-class="active" to="/home/message">Message</router-link>
+					<router-link class="list-group-item" active-class="active" to="/home/message">Message</router-link>
 				</li>
 			</ul>
 			<router-view></router-view>
