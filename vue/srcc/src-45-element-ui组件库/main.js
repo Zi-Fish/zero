@@ -16,9 +16,7 @@ import { Button,Row,DatePicker } from 'element-ui';
 Vue.config.productionTip = false
 
 //应用ElementUI
-// Vue.use(ElementUI);//混着所有的组件
-
-//按需引入 
+// Vue.use(ElementUI);
 Vue.component('atguigu-button', Button);
 Vue.component('atguigu-row', Row);
 Vue.component('atguigu-date-picker', DatePicker);
