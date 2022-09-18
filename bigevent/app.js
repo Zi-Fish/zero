@@ -26,8 +26,8 @@ app.use(function (req, res, next) {
 const expressJWT= require('express-jwt')
 const config = require('./config')
 // 使用 .unless({ path: [/^\/api\//] }) 指定哪些接口不需要进行 Token 的身份认证
-// app.use(expressJWT({ secret: config.jwtSecretKey }).unless({ path: [/^\/api\//] }))
-app.use(expressJWT({ secret: config.jwtSecretKey,algorithms:['HS256'] }).unless({ path: [/^\/api/] }))
+app.use(expressJWT({ secret: config.jwtSecretKey }).unless({ path: [/^\/api\//] }))
+// app.use(expressJWT({ secret: config.jwtSecretKey,algorithms:['HS256'] }).unless({ path: [/^\/api/] }))
 
 //导入并使用用户路由模块
 const userRouter=require('./router/user')
@@ -50,5 +50,5 @@ app.use((err, req, res, next)=>{
 })
 
 app.listen(443,()=>{
-  console.log('api server running at http://127.0.01:443')
+  console.log('api server running at http://127.0.0.1:443')
 })

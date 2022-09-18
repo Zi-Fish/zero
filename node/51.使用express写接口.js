@@ -30,5 +30,5 @@ app.use('/api', router)
 
 // 启动服务器
 app.listen(8001, () => {
-  console.log('express server running at http://127.0.0.1')
+  console.log('express server running at http://localhost')
 })
