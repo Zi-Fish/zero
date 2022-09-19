@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // forEach 迭代（遍历数组）遇到return不会停止迭代
+    // map()相似
+    var arr = [1, 2, 3, 4, 5, 6]
+    arr.forEach(function (value, index, array) {
+      console.log('每个数组元素' + value);
+      console.log('每个数组元素的索引号' + index);
+      console.log('数组本身' + array);
+      var sum=0;
+      sum += value;
+      console.log(sum)
+    })
+    // trim 去除字符串两侧空格
+    var a='  andu   '
+    console.log(a);
+    var a1=a.trim()
+    console.log(a1)
+  </script>
+
+</body>
+
+</html>

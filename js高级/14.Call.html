@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function fn(x,y) {
+      console.log('1323')
+      console.log(this)//指向window
+      console.log(x+y)//3
+    }
+    var abc={
+      name:'andy'
+    }
+    // 1.调用函数
+    // fn.call();
+    // 2.可以改变函数的this指向
+    fn.call(abc,1,2)
+    // 指向abc,abc改变指向，不参与传参
+  </script>
+</body>
+
+</html>

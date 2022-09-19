@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function Father(uname, age) {
+      // this指向父构造函数对象实例
+      this.uname = uname;
+      this.age = age;
+    }
+    Father.prototype.money = function () {
+      console.log(10000)
+    }
+    function Son(uname, age, s) {
+      //this指向子构造函数的对象实例
+      // Son.prototype - Father.prototype//一改全改，不能这样使用
+
+
+      Son.prototype = new Father()
+      //利用constructor指回原来的函数
+      Son.prototype.constructor = Son
+      Son.prototype.exam = function () {
+        console.log('kaoshi')
+      }
+      Father.call(this, uname, age)//不会继承原型对象
+      this.s = s
+      // 继承，也可以追加
+    }
+    var son = new Son('ldh', 56, 100)
+    console.log(son)
+  </script>
+</body>
+
+</html>

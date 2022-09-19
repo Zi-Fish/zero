@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function Star(uname, age) {
+      this.uname = uname;
+      this.age = age
+    }
+    Star.prototype.sing = function () {
+      console.log('我会唱歌')
+    }
+    Star.prototype.sex = 'nan'
+    var ldh = new Star('ldh', 18)
+    ldh.sex = 'NV'
+    // 就近查找，没有就往上找
+    console.log(ldh.sex)
+  </script>
+</body>
+
+</html>
