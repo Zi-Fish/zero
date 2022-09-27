@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  div {
+    width: 200px;
+    height: 200px;
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .a1 {
+    box-sizing: border-box;
+    background: #000;
+    opacity: 1;
+    transition: 2s;
+
+  }
+
+  .a2 {
+    box-sizing: content-box;
+    background: blueviolet;
+    resize: both;
+  }
+
+  .a1:hover {
+    opacity: 0;
+  }
+</style>
+
+<body>
+  <div class="a1">
+    0111
+  </div>
+  <div class="a2">
+    02222
+  </div>
+</body>
+
+</html>

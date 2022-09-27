@@ -1,0 +1,16 @@
+{
+  "name": "electron",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "nodemon -e js,html --exec electron ."
+  },
+  "keywords": [],
+  "author": "hanxi",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^21.1.1",
+    "nodemon": "^2.0.20"
+  }
+}
