@@ -39,7 +39,7 @@
             width: 4rem;
             border: 1px solid violet;
             border-radius: 2em;
-            padding: 0.5rem;
+            padding: 0.25rem;
             margin: 1.5rem;
 
         }
